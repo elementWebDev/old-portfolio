@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front End Foundations</title>
+  <link type="text/css" rel="stylesheet" href="css/main.css">
+  <!--
+    Generally speaking, first declare the broadest rules with type selectors, and then get more specific with class selectors. This way, the broader rules cascade down and become defaults, and more specific rules can change the defaults.
+  -->
+</head>
+<!--
+  Writing class and type selectors:
+    - when you're just using type selectors, the order doesn't really matter
+    - when you start combining them with class selectors - the ORDER MATTERS
+-->
+<body>
+<div class="header">
+  <h1>Recipe World</h1>
+  <ul class="nav">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="suggest.html">Suggest</a></li>
+  </ul>
+</div>
+<div class="main-content">
+  <h2>Recipes</h2>
+  <ul class="recipes">
+    <li>
+      <h3><a href="magic-cake.html">Magic Cake</a></h3>
+      <p>This is a dangerously delicious cake.</p>
+    </li>
+    <li>
+      <h3><a href="magic-cake.html">Magic Cake</a></h3>
+      <p>This is a dangerously delicious cake.</p>
+    </li>
+    <li>
+      <h3><a href="magic-cake.html">Magic Cake</a></h3>
+      <p>This is a dangerously delicious cake.</p>
+    </li>
+    <li>
+      <h3><a href="magic-cake.html">Magic Cake</a></h3>
+      <p>This is a dangerously delicious cake.</p>
+    </li>
+  </ul>
+</div><!--/end main-content -->
+<div class="notes">
+  <h3>My Notes</h3>
+  <h4>Centering Content</h4>
+  <p>There's 2 main ways to center things, but the CSS you write depends on what you're centering.</p>
+  <div>
+    <p><strong>If:</strong> you want to center an <span>entire</span> block-level tag</p>
+    <p><strong>And:</strong> it is fixed-width</p>
+    <p><strong>Then:</strong> set the left and right margins to auto</p>
+  </div>
+  <div>
+    <p><strong>If:</strong> you want to center children <span>inside</span> a block-level tag</p>
+    <p><strong>Then:</strong> set the <strong>text-align</strong> of the children to <strong>center</strong></p>
+  </div>
+</div>
+</body>
+</html>

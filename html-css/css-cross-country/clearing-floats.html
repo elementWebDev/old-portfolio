@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Cross Country | CodeSchool Notes</title>
+<link rel="stylesheet" href="css/main.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> Code School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+<aside>
+  <div class="secondary-links">
+    <p>Level Links <br />
+      <small>(some available)</small></p>
+    <a href="#fundamentals">Fundamentals</a> | <a href="#clearing-floats">Clearing&nbsp;Floats</a> | <a href="box-bindings.html">Box&nbsp;Bindings</a> | <a href="grooming-code.html">Grooming&nbsp;Code</a> | <a href="safety.html">CSS&nbsp;Safety</a> | <a href="image-issues.html">Image&nbsp;Issues</a> | <a href="sprites.html">Sprites</a> | <a href="pseudos.html">Pseudos</a> </div>
+</aside>
+<main>
+  <!-- Path HTML/CSS | Course 3 | Level 2 -->
+  <article>
+    <!-- 3.2.1 -->
+    <h2>Clear Carving</h2>
+    <section>
+      <h3 id="clearing-floats">Clearing Floats</h3>
+      <h4>Clearing is necessary if:</h4>
+      <figure>
+        <p>Floated items are taller than non-floated content</p>
+        <div class="group">
+          <div class="blue-box blue-box-lg"></div>
+          <div class="float-example-5">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+          <div class="float-example-5">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+        </div>
+      </figure>
+      <figure>
+        <p>All children are floating</p>
+        <div class="float-example-6">
+          <div class="blue-box"></div>
+          <div class="grey-box"></div>
+        </div>
+        <div class="clear"></div>
+      </figure>
+      <h4>Common float-clearing methods:</h4>
+      <figure>
+        <p>The options below are listed matter of <strong>importance</strong>. The <strong>bottom of the list being the most appropriate way of clearing a float</strong></p>
+        <ul>
+          <li>Clear with a subsequent element</li>
+          <li>Manual Clearing</li>
+          <li>The clearfix</li>
+        </ul>
+        <pre><code>
+  clear: left / right / both
+          </code></pre>
+      </figure>
+      <h5>Clear with a subsequent element</h5>
+      <figure>
+        <pre><code>
+  &lt;div&gt;
+    &lt;<strong>img</strong> src="ski.jpg" alt="Skiing!" /&gt;
+    &lt;p&gt;To successfully ski, simply do not fall.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="<strong>intro</strong>"&gt;   // <em>Clearing with Subsequent Element - see below</em>
+    &lt;p&gt;Whee!&lt;/&gt;
+  &lt;/div&gt;
+        </code></pre>
+        <pre class="pre-sm-non-float"><code>
+  <strong>img</strong> {
+    float: left;
+  }
+  <strong>.intro</strong> {
+    <strong>clear: both;</strong>
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>WARNING:</strong></p>
+          <ul>
+            <li>Requires sequence to stay intact - breaks if things move</li>
+            <li>Background / Border do not extend</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <h5>Manual Clearing</h5>
+      <figure>
+        <pre><code>
+  &lt;div&gt;
+    &lt;<strong>img</strong> src="ski.jpg" alt="Skiing!" /&gt;
+    &lt;p&gt;To successfully ski, simply do not fall.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="<strong>clear</strong>"&gt;&lt;/div&gt;   // <em>Manual Clearing - see below</em>
+  &lt;/div&gt;
+        </code></pre>
+        <pre class="pre-sm-non-float"><code>
+  <strong>.clear</strong> {
+    <strong>clear: both;</strong>
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>WARNING:</strong></p>
+          <ul>
+            <li>Requires an empty element</li>
+            <li>Might not be necessary later</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <h5>The clearfix</h5>
+      <figure class="group">
+        <pre class="pre-sm"><code>
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after {
+    clear: both;
+  }
+  .group {
+    zoom: 1; /* IE6&amp;7 */
+  }
+        </code></pre>
+        <p><strong>RECCOMENDED</strong></p>
+        <p>Originally developed by Tony Aslett</p>
+        <p>Refined version by Nicholas Gallagher</p>
+        <p><strong>When used on the parent, the children will be self-cleared</strong></p>
+      </figure>
+    </section>
+    <!-- 3.2.2 -->
+    <section>
+      <h3>Inheritance &amp; Specificity</h3>
+      <h4>Nested elements automatically inherit parent styles:</h4>
+      <figure class="group">
+        <pre><code>
+  &lt;article class="<strong>featured</strong>"&gt;
+    &lt;p&gt;Dang, it's cold up here!&lt;/p&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-sm"><code>
+  .featured {
+    color: <strong>#aba4ac</strong>;
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>The paragraph content above will inherit this color</strong></p>
+        </figcaption>
+      </figure>
+      <h4>Selectors can be nested to override parent properties:</h4>
+      <figure class="group">
+        <pre><code>
+  &lt;article class="<strong>featured</strong>"&gt;
+    &lt;p&gt;Dang, it's cold up here!&lt;/p&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-sm"><code>
+  .featured {
+    color: #0000ff;
+  }
+  .featured p {
+    color: <strong>#fff</strong>;
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>nesting the element selector overrides the color on .featured</strong></p>
+        </figcaption>
+      </figure>
+      <h4>Dealing with Specificity:</h4>
+      <figure>
+        <pre><code>
+  &lt;div id="content" class="featured"&gt;
+    &lt;p&gt;Break out the cocoa.&lt;/p&gt;
+  &lt;/div&gt;
+        </code></pre>
+        <pre><code>
+  #content {
+    color: #555;
+  }
+  .featured {
+    color: #ccc;
+  }
+        </code></pre>
+        <figcaption>
+          <p>Which color? See below.</p>
+        </figcaption>
+      </figure>
+      <h4>The priority of a selector (specificity):</h4>
+      <figure> <img src="img/specificity.png" alt="Specificity (calculating priority)" /> </figure>
+      <figure>
+        <div class="group">
+          <pre class="pre-md"><code>
+  p { color: #fff; }
+        </code></pre>
+          <p>0, 0, 0, 1</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  .intro { color: #98c7d4; }
+        </code></pre>
+          <p>0, 0, 1, 0</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  #header { color: #444245; }
+        </code></pre>
+          <p>0, 1, 0, 0</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  &lt;h1 style="color: #000;"&gt;Mogul&lt;/h1&gt;
+        </code></pre>
+          <p>1, 0, 0, 0</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  p { color: #fff !important; }
+        </code></pre>
+          <p><strong>WARNING!</strong></p>
+          <p>1, 0, 0, 0</p>
+        </div>
+      </figure>
+      <figure>
+        <div class="group">
+          <pre class="pre-md"><code>
+  .intro p.article { color: #fff; }
+          </code></pre>
+          <p>0, 0, 2, 1</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  .intro ul li.active { color: #98c7d4; }
+          </code></pre>
+          <p>0, 0, 2, 2</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  #header { color: #444245; }
+          </code></pre>
+          <p>0, 1, 0, 0</p>
+        </div>
+        <figcaption>
+          <p><strong>Using ID's sparingly will decrease complexity</strong></p>
+        </figcaption>
+      </figure>
+      <p>So, back to our example...</p>
+      <h4>Dealing with Specificity</h4>
+      <pre><code>
+  &lt;section id="content"&gt;
+    &lt;p class="featured"&gt;Free coffee with ski rental.&lt;/p&lt;
+    &lt;p&gt;Choose from 48 different ski colors.&lt;/p&gt;
+  &lt;/section&gt;
+      </code></pre>
+      <pre><code>
+  #content p {     <strong>0, 1, 0, 1</strong>
+    color: #000;
+  }
+  .featured {      <strong>0, 0, 1, 0</strong>
+    color: #777;
+  }
+      </code></pre>
+      <p><strong>Reccomended</strong></p>
+      <pre><code>
+  #content p {           <strong>0, 1, 0, 1</strong>
+    color: #000;
+  }
+  #content .featured {   <strong>0, 1, 1, 0</strong>
+    color: #777;
+  }
+      </code></pre>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <p>Level Links (not available yet)</p>
+    <a href="index.html">Fundamentals</a> | <a href="clearing-floats.html">Clearing&nbsp;Floats</a> | <a href="box-bindings.html">Box&nbsp;Bindings</a> | <a href="grooming-code.html">Grooming&nbsp;Code</a> | <a href="safety.html">CSS&nbsp;Safety</a> | <a href="image-issues.html">Image&nbsp;Issues</a> | <a href="sprites.html">Sprites</a> | <a href="pseudos.html">Pseudos</a> </div>
+  <p>&copy; 2017 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

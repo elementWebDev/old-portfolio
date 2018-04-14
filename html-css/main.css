@@ -1,0 +1,185 @@
+/* main.css */
+/* My Reset for CodeSchool */
+html, body, h1, h2, h3, h4, p, div, ul, ol, li {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+}
+body {
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+  background-color: #333;
+  border-bottom: 2px solid black;
+}
+header p, header a, header ul {
+  color: #ccc;
+  text-align: center;
+}
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+section {
+  margin: 0 auto;
+  padding: 20px 15px 40px 15px;
+  border-top: 1px solid #999;
+}
+h1, h2, h3, h4 {
+  width: 100%
+}
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Helvetica Neue", Arial, "Roboto", sans-serif;
+  margin-bottom: 30px;
+}
+h2 {
+  font-family: "Helvetica Neue", Arial, "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  color: #000;
+  margin: 0 auto;
+}
+h3 {
+  font-family: "Helvetica Neue", Arial, "Roboto", sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: 1px solid #555;
+  margin: 30px 0;
+}
+h4 {
+  font-family: "Helvetica Neue", Arial, "Roboto", sans-serif;
+  font-size: 22px;
+  font-variant: small-caps;
+  padding-bottom: 0;
+}
+p {
+  font-family: "Helvetica Neue", Arial, "Roboto", sans-serif;
+    margin: 8px 0;
+  font-size: 14px;
+}
+a {
+	font-family: "Helvetica Neue", Arial, "Roboto", sans-serif;
+  font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+header {
+  margin-bottom: 50px;
+  text-align: center;
+  background-color: #333;
+  border-bottom: 2px solid black;
+}
+header p, header a, header li {
+  color: #ccc;
+}
+
+a:hover {
+	color: #a00;
+	text-decoration: underline;
+}
+header a:hover {
+  color: #a33;
+}
+ul {
+  list-style-type: none;
+}
+
+nav li {
+  text-align: center;
+  display: inline;
+  padding-right: 10px;
+}
+blockquote {
+  background: #ddd;
+  color: #777;
+  border-left: 10px solid #777;
+  text-align: left;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #777;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+strong {
+  color: #a00;
+}
+pre {
+  text-align: left;
+  background-color: #222;
+  color: #ccc;
+	padding-left: 8px;
+}
+code strong {
+  color: #c66;
+}
+input {
+  margin-left: 50px;
+}
+div.input {
+  margin-bottom: 50px;
+}
+img {
+  margin: 8px;
+}
+ul {
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 25px;
+}
+ul li {
+  padding-bottom: 8px;
+}
+nav ul {
+  line-height: 2em;
+}
+ol {
+  padding-left: 15px;
+  text-align: left;
+}
+ol li {
+  padding-bottom: 8px;
+}
+dl {
+  font-family: Arial, sans-serif;
+  font-size: .8em;
+}
+dt {
+  text-align: left;
+  font-weight: bold;
+}
+dt em {
+  font-weight: normal;
+}
+dd {
+  text-align: left;
+  margin-bottom: 1em;
+}
+img {
+  max-width: 100%;
+  margin: 25px 0;
+}
+figure {
+  padding: 8px;
+  border: 1px solid #aaa;
+}
+figure p{
+  text-align: left;
+}

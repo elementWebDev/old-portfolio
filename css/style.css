@@ -1,0 +1,86 @@
+body {
+  background-color: #888;
+}
+.navbar-inverse {
+  background-color: #23A341;
+  color: #000;
+}
+a.navbar-brand {
+  background-color: #333;
+  color: #eee;
+}
+.highlight > a {
+  background-color: #333;
+}
+.wrapper {
+  margin: 0 5%;
+}
+.intro {
+  margin-bottom: 60px;
+  padding-bottom: 15px;
+  border-bottom: 1px dotted #999;
+}
+.about {
+  margin: 0 auto;
+  padding: 10%;
+  background: #aaa;
+}
+.about p{
+  padding: 5% 5% 3% 3%;
+  font-size: 16px;
+  color: #fff;
+}
+.portfolio {
+  background-color: #eee;
+  padding: 5%;
+}
+.profile-pic{
+  margin: 0 auto;
+  max-width: 250px;
+}
+.contact {
+  background-color: #eee;
+  padding: 5%;
+}
+.btn {
+  background-color: #23A341;
+  border: 1px solid #000;
+  box-shadow: 1px 1px #333;
+}
+.btn a {
+  color: #eee;
+}
+.btn a:hover {
+  color: #000;
+}
+a {
+  color:#00D311
+}
+a:hover {
+  text-decoration: none;
+}
+a.glyphicon-menu-hamburger {
+  color: #222;
+}
+pre {
+  /*margin-left: 25px;*/
+  background-color: #222;
+  color: #ccc;
+  max-width: 600px;
+}
+.lessons {
+  background-color: #333;
+}
+.solutions {
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+#daily {
+  margin-top: 35px;
+}
+footer {
+  padding: 1%;
+  border: 1px solid #000;
+  background-color: #23A341;
+  background-size: cover;
+}

@@ -1,0 +1,30 @@
+/* http://campus.codeschool.com/courses/front-end-foundations/level/2/section/1/video/1 */
+
+/* CSS */
+  /* descendant-selector - selects children only from parents listed */
+    ul li {}
+
+  /* pseudo-selector - a modifier that can be added to a selector to select a tag only when a certain condition has occurred. */
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: darkred;
+    }
+
+    ol li:first-child {
+
+    }
+
+/* Where to put */
+/* Code School uses
+  <html>
+  <head>
+  <style type="text/css">
+    a {
+    color: red;
+  }
+  ...
+*/

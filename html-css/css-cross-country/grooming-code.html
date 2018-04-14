@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Grooming Code | CSS Cross Country</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/grooming.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Edit Links accordingly -->
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> Code School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+<aside>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="./index.html#fundamentals">Fundamentals</a>
+    <a href="./index.html#clearing-floats">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+</aside>
+<main>
+  <!-- Path HTML/CSS | Course 3 | Level 4 -->
+  <section>
+    <!-- 3.4. -->
+    <!--  | Grooming -->
+    <article>
+      <h3>Grooming Your Code</h3>
+      <p>Level 4</p>
+      <ul>
+        <li>Staying DRY</li>
+        <li>Display Types</li>
+        <li>Horizontal Centering</li>
+      </ul>
+      <p>In this section, we're going to talk about different ways that you can clean up your CSS, including Staying DRY, knowing and understanding display types, and a little bit about horizontal centering.</p>
+      <p>One of the fundamental ways that you can clean up your CSS is to be DRY.</p>
+
+      <div class="group">
+        <ul class="pre-sm">
+          <li><strong>D -</strong> Don't</li>
+          <li><strong>R -</strong> Repeat</li>
+          <li><strong>Y -</strong> Yourself</li>
+        </ul>
+        <p>In programming, the DRY acronym stands for don't repeat yourself, as it's a practice that will save you tons of time in declaring and maintaining your styles.</p>
+      </div>
+      <p>Let's look at an example.</p>
+      <figure>
+        <p>Suppose you want to include a font property in a number of text related elements</p>
+        <pre><code>
+  &lt;body&gt;
+    &lt;div&gt; class=<strong>"container"</strong>&gt;
+      &lt;h1&gt;Sven's Snowshoe Superstore&lt;/h1&gt;
+      &lt;p&gt;Our snowshoes are so stylish!&lt;/p&gt;
+      &lt;a class=<strong>"sale"</strong> href=<strong>"/sale"</strong>&gt;View our sales&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+        </code></pre>
+        <div class="group">
+          <pre class="pre-mid right"><code>
+  h1 {
+    font-family: Arial, sans-serif;
+  }
+  p {
+    font-family: Arial, sans-serif;
+  }
+  .sale {
+    font-family: Arial, sans-serif;
+  }
+          </code></pre>
+          <p>One way you can do this is to define each of them individually, <em>but this isn't very DRY,</em> because as you can see we're having to <em>repeat</em> ourself <em>three times</em>.</p>
+        </div>
+        <div class="group">
+          <pre class="pre-mid right"><code>
+  body {
+    font-family: Arial, sans-serif;
+  }
+          </code></pre>
+          <p><strong>A better approach</strong> is to pull this definition up into the <strong>body tag</strong>.</p>
+        </div>
+        <p>Note on UL LI</p>
+        <pre><code>
+          nav li {
+          display: inline;
+          margin: 0 5px;
+        }
+        nav ul {
+          width: 250px;
+          margin: 0 auto;
+        }
+        </code></pre>
+      </figure>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="index.html">Fundamentals</a>
+    <a href="clearing-floats.html">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+  <p>&copy; 2017 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

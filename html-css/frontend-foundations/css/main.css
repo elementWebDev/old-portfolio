@@ -1,0 +1,177 @@
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+body {
+  background-color: #5f5f5f;
+  background-image: url(../img/stardust.png);
+  background-position: top left;
+  background-repeat: repeat;
+}
+h1 {
+  color: #fff;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+h2 {
+  color: #000000;
+  margin: 10px 0 20px 0;
+  text-align: center;
+
+}
+h3 {
+  color: #333333;
+  margin: 15px 0 0 0;
+  border-bottom: 1px solid #aaaaaa;
+}
+h4 {
+  color: #666666;
+}
+a {
+  color: #440000;
+  text-decoration: none;
+}
+p {
+  color: #444444;
+}
+ol {
+
+}
+ul {
+  padding: 0 0 0 50px;
+}
+li {
+  margin-bottom: 5px;
+}
+ul li {
+  display: inline;
+  list-style-type: none;
+}
+.header {
+  padding: 10px 10px 10px 10px;
+  background-color: #b56663;
+  text-align: center;
+}
+.header img {
+  display: block;
+  margin: 0 auto;
+}
+.header .nav a {
+  color: #fff;
+}
+
+ /* .main-content fixed-width will be changed going through mobile-dev course */
+.main-content {
+  width: 500px;
+  padding: 20px 20px 20px 20px;
+  border: 1px solid #ddd;
+  margin: 30px auto 0 auto;
+  background: #fff url(../img/crossword.png) top left repeat;
+}
+.nav {
+  padding-left: 0;
+  margin: 5px 0 20px 0;
+  text-align: center;
+}
+.nav a {
+  color: #0000af;
+  text-decoration: none;
+}
+.nav li {
+  display: inline;
+}
+.recipes {
+  list-style-type: none;
+  padding: 0;
+}
+.recipes li {
+  border: 1px solid #b56663;
+  padding-left: 15px;
+  background: #fff url(../img/sayagata.png) top left repeat;
+}
+.recipes h3 {
+  border-bottom: 0;
+}
+.recipes a {
+  color: #7facaa;
+  text-decoration: none;
+}
+.featured-image {
+  background: #444 url(../img/featured-cake.png);
+  }
+.featured-image h3 {
+  margin: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 0 5px 15px;
+  text-transform: uppercase;
+}
+.photos {
+  list-style-type: none;
+  padding: 0;
+}
+.photos li {
+  display: inline;
+  padding-left: 11px;
+}
+#suggest {
+  color: #7facaa;
+}
+/* FORMS */
+label, input {
+  display: block;
+}
+label {
+  margin-bottom: 10px;
+}
+input {
+  width: 500px;
+  margin-bottom: 30px;
+}
+input[type=submit] {
+  width: 120px;
+  font-size: 25px;
+}
+/* notice below you can't set the height of the text input- you have to adjust the font-size and padding */
+input[type=text] {
+  border: 2px solid #7facaa;
+  font-size: 24px;
+  padding: 7px;
+}
+textarea {
+  width: 500px;
+  height: 400px;
+  padding: 7px;
+  border: 2px solid #7facaa;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+input[type=checkbox], label[for=newsletter] {
+  display: inline;
+}
+
+/* My Notes - on recipes.html */
+.notes {
+  margin: 100px auto 10px auto;
+  background: #fff url(../img/sayagata.png) top left repreat;
+}
+.notes h3 {
+  text-align: center;
+}
+.notes h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.notes p {
+  padding: 5px;
+}
+.notes p span {
+  text-decoration: underline;
+}
+.notes div {
+  max-width: 400px;
+  margin: 15px auto;
+  text-align: center;
+  border: 1px solid #999;
+}

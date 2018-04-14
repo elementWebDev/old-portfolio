@@ -1,0 +1,98 @@
+.logo {
+  background: url(../img/svens.png);
+  display: inline-block;
+  height: 100px;
+  width: 200px;
+}
+.logo-full {
+  height: 200px;
+}
+.logo-blue {
+  background: url(../img/svens-blue.png);
+  display: block;
+}
+.logo-blue:hover {
+  background: url(../img/svens-grey.png);
+}
+.logo-indent {
+  text-indent: -9999px;
+}
+.logo-dark {
+  background-position: 0 -100px;
+}
+.logo-dark-margin {
+  margin-top: 30px;
+}
+
+.logo-sprite:hover, .logo:focus {
+  background-position: 0 -100px;
+}
+.group li {
+  float: left;
+  margin-right: 10px;
+  list-style-type: none;
+}
+
+
+.center {
+  margin: 0 auto;
+  display: block;
+}
+
+
+.twitter, .github {
+  background: url(../img/social.png);
+  display: block;
+  height: 100px;
+  width:  100px;
+  text-indent: -9999px;
+}
+.github {
+  background-position: -100px 0;
+}
+.twitter:hover, .twitter:focus {
+    background-position: 0px -100px
+  }
+  .github:hover, .github:focus {
+    background-position: -100px -100px
+  }
+/* for example only */
+.twitter-no-hover, .github-no-hover {
+  background: url(../img/social.png);
+  display: block;
+  height: 100px;
+  width:  100px;
+  text-indent: -9999px;
+}
+.github-no-hover {
+  background-position: -100px 0;
+}
+
+
+/* LATER */
+.mario-run {
+	background: url('../img/mario.png') no-repeat -10px -10px;
+	width: 120px;
+	height: 160px;
+}
+
+}
+.mario-run:hover {
+
+}
+
+.sprite-1 {
+	background: url('../img/mario.png') no-repeat -10px -10px;
+	width: 120px;
+	height: 160px;
+}
+.sprite-2 {
+	background: url('imgs/mario.png') no-repeat -150px -10px;
+	width: 150px;
+	height: 160px;
+}
+.sprite-3 {
+	background: url('imgs/mario.png') no-repeat -320px -10px;
+	width: 110px;
+	height: 160px;
+}

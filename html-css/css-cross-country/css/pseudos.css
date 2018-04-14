@@ -1,0 +1,37 @@
+.warn {
+  margin-top: -60px;
+  margin-left: 100px;
+}
+
+.pseudo-list {
+
+}
+.pseudo-list li {
+  color: #aaa;
+  border-bottom: 1px solid #aaa;
+  text-transform: uppercase;
+  padding-top: .8em;
+}
+.pseudo-list .last {
+  border-bottom: 0;
+}
+.pseudo-list li:last-child {
+  border-bottom: 0;
+}
+/* wow... what frustration.. may need to fix for mobile */
+
+ul.zebra {
+  list-style-type: none;
+  margin-top: -5px;
+  margin-right: 150px;
+  margin-left: 15px;
+  }
+.zebra li {
+  color: #aaa;
+  text-transform: uppercase;
+  padding-top: .1em;
+
+}
+.even {
+  background-color: #444245;
+}

@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>HTML5 Elements | Front-end Formations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/section-2.css">
+</head>
+
+<body>
+<header>
+  <div id="branding">
+    <h2>Element Web Development</h2>
+  </div>
+  <h1>Front-end Formations</h1>
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Elements</a></li>
+      <li><a href="html5-forms.html">Forms</a></li>
+      <li></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="elements"> 
+    <!-- 2. HTML5 Element -->
+    <h2>HTML5 Elements</h2>
+    <p>Table of Contents</p>
+    <ul class="toc">
+      <li><a href="#section">Section</a></li>
+      <!--<li><a href="#header">Header</a></li>
+      <li><a href="#footer">Footer</a></li>
+      <li><a href="#aside">Aside</a></li>
+      <li><a href="#nav">Nav</a></li>-->
+      <li><a href="#article">Article</a></li>
+      <li><a href="#main">Main</a></li>
+      <li><a href="#figure">Figure / Figcaption</a></li>
+      <li><a href="#time">Time</a></li>
+    </ul>
+    <h4 id="section">Section</h4>
+    <blockquote>
+      <p>While a div has no semantic meaning, a <strong>section</strong> element does, and it's used for grouping together thematically related content.</p>
+    </blockquote>
+    <p>&ldquo;Is all of the content related?&rdquo;</p>
+    <p>If you answered yes to that question, then a section element might be appropriate.</p>
+    <h5>Before</h5>
+    <pre><code>
+    &lt;div class="section"&gt;
+      &lt;h2&gt;The Gallery&lt;/h2&gt;
+      &lt;!--...--&gt;
+    &lt;/div&gt;
+    </code>
+    </pre>
+    <h4>HTML5</h4>
+    <pre><code>
+    <span>&lt;section&gt;</span>
+      &lt;h2&gt;The Gallery&lt;/h2&gt;
+      &lt;!--...--&gt;
+    <span>&lt;/section&gt;</span>
+    </code></pre>
+    <!--<h3 id="header">Header</h3>
+    <p></p>
+    <h3 id="footer">Footer</h3>
+    <p></p>
+    <h3 id="aside">Aside</h3>
+    <p></p>
+    <h3 id="nav">Nav</h3>-->
+    <p></p>
+    <h3 id="article">Article</h3>
+    <blockquote>The article element represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication.</blockquote>
+    <p>Technically just independently reusable or distributable. It's just something we can use in syndication. Essentially, an <strong>article</strong> element is just another type of <strong>section</strong>. It's used for self-contained related content.</p>
+    <p>Determining if a particular piece of content is &ldquo;self-contained&rdquo;:</p>
+    <h4>Some uses for the article tag:</h4>
+    <ul>
+      <li>a blog post</li>
+      <li>a news story</li>
+      <li>a comment or post</li>
+      <li>a review</li>
+    </ul>
+    <p>For example: each item in the sample Gallery would be marked up as an <strong>article</strong>.</p>
+    <pre><code>
+        <span>&lt;article&gt;</span>
+          &lt;!-- ... --&gt;
+        <span>&lt;/article&gt;</span>
+      </code></pre>
+    <h3 id="main">Main</h3>
+    <p>Main Content</p>
+    <ul>
+      <li>Don't include more than one main element in a document</li>
+      <li>Do not include the <strong>main</strong> element inside of an <em>article</em>, <em>aside</em>, <em>footer</em>, <em>header</em>, or <em>nav</em> element</li>
+    </ul>
+    <h3 id="figure">Figure / Figcaption</h3>
+    <h4>Figure</h4>
+    <p>
+    <blockquote>The <strong>figure</strong> element represents a unit of content, optionally with a caption, that is self-contained, that is typically referenced as a single unit from the main flow of the document without affecting the document's meaning.</blockquote>
+    </p>
+    <pre><code>
+        <span>&lt;figure&gt;</span>
+          &lt;img src="image.jpg" alt="My Picture" /&gt;
+        <span>&lt;/figure&gt;</span>
+      </code></pre>
+    <h4>Figcaption</h4>
+    <blockquote>
+      <p>The <strong>figcaption</strong> element represents a caption or legend for a figure.</p>
+    </blockquote>
+    <pre><code>
+      <span>&lt;figure&gt;</span>
+        &lt;img src="image.jpg" alt="My Picture" /&gt;
+        <span>&lt;figcaption&gt;</span>This is a caption for the picture.<span>&lt;/figcaption&gt;</span>
+      <span>&lt;/figure&gt;</span>
+    </code></pre>
+    <p>So for our existing figure element, we add a <strong>figcaption</strong> element that contains a caption for the picture. Make sure to put the image and figcaption <em>inside</em> the figure element.</p>
+    <h3 id="time">Time</h3>
+    <blockquote>
+      <p>The <strong>time</strong> element represents either a time on a 24 hour clock, or a precise date in the proleptic Gregorian calendar, optionally with a time and time-zone offset.</p>
+    </blockquote>
+    <p>Example usage of the <strong>time</strong> tag:</p>
+    <pre><code>
+      <span>&lt;time&gt;</span>2013-09-16<span>&lt;/time&gt;</span>
+    </code></pre>
+    <p>Say we want to display time as &ldquo;mm/dd/yyyy&rdquo;:</p>
+    <pre><code>
+      <span>&lt;time&gt;</span>09/16/2013<span>&lt;/time&gt;</span>
+    </code></pre>
+    <p>But we actually want to use a different format for our date- the one one shown above- so we're going to put that date format below within the content for our <strong>time</strong> tag. We need to make an important change in order to use that date format</p>
+    <pre><code>
+      <span>&lt;time datetime=</span>"2013-09-16"<span>&gt;</span>09/16/2013<span>&lt;/time&gt;</span>
+    </code></pre>
+    <p>Without the <strong>datetime</strong> attribute, content must be a valid date, time, or precise datetime.</p>
+  </section>
+  <!--/html5-elements-->
+</main>
+<footer>
+  <p>&copy; 2017 <a href="http://elementwebdev.com">Element Web Development</a></p>
+</footer>
+</body>
+</html>

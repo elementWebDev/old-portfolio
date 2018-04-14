@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Cross Country | CodeSchool Notes</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/pseudos.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> Code School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+
+<!-- links float when min-width 768px -->
+<aside>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="./index.html#fundamentals">Fundamentals</a>
+    <a href="./index.html#clearing-floats">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+</aside>
+<main>
+  <!--
+    Path HTML/CSS | Course 3 | Level 7
+    page 160 in pdf
+  -->
+
+  <h2>Pseudo Sitzmark</h2>
+  <section>
+    <article>
+      <h3>Psuedo Classes</h3>
+      <figure>
+        <h4>Altering the <strong>last item</strong></h4>
+        <p>Let's take a look at a common design pattern.</p>
+        <p>In this example we have a list of items, each with a border of their own on the bottom.</p>
+        <!--  -->
+        <div class="group">
+          <pre><code>
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#lodging"</span>&gt;<span class="text">Lodging</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#rentals"</span>&gt;<span class="text">Rentals</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=<span class="value">"last"</span>&gt;&lt;a href=<span class="value">"#lessons"</span>&gt;<span class="text">Lessons</span>&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+          </code></pre>
+          <pre class="pre-mid"><code>
+  <span class="text">li }
+    <span class="property">border-bottom:</span> <span class="value">1px solid #aaa;</span>
+  }
+  .last {
+    <span class="property">border-bottom:</span> <span class="value">0;</span>
+  }</span>
+          </code></pre>
+          <ul class="pseudo-list">
+            <li><a href="#lodging">Lodging</a></li>
+            <li><a href="#rentals">Rentals</a></li>
+            <li class="last"><a href="#lessons">Lessons</a></li>
+          </ul>
+          <img src="img/warning.png" class="warn" alt="warning">
+        </div>
+        <p>But we want the last list item to have that border removed. If we like, we can manually, or through logic, add a class to the last item to remove the last border for us, but that's adding an extra step.</p>
+
+        <p>With pseudo classes we won't need to add that logic.</p>
+        <p> We can go ahead and remove that last class, then use the last child pseudo class to target the last li in our lists, and remove the border for us.</p>
+
+        <div class="group">
+          <pre><code>
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#lodging"</span>&gt;<span class="text">Lodging</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#rentals"</span>&gt;<span class="text">Rentals</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#lessons"</span>&gt;<span class="text">Lessons</span>&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+          </code></pre>
+          <pre class="pre-mid"><code>
+  <span class="text">li }
+    <span class="property">border-bottom:</span> <span class="value">1px solid #aaa;</span>
+  }
+  li<span class="pseudo">:last-child</span> {
+    <span class="property">border-bottom:</span> <span class="value">0;</span>
+  }</span>
+          </code></pre>
+          <ul class="pseudo-list">
+            <li><a href="#lodging">Lodging</a></li>
+            <li><a href="#rentals">Rentals</a></li>
+            <li><a href="#lessons">Lessons</a></li>
+          </ul>
+          <img src="img/check2.png" class="warn " alt="warning">
+        </div>
+
+        <h4>Conditionally <strong>select</strong> element based on <strong>state or position</strong></h4>
+        <ul>
+          <li>Start with a colon (:)</li>
+        </ul>
+        <p>With pseudo classes we're able to conditionally target items based on their position or their current state.</p>
+        <p>All pseudo classes start with a colon, and you're probably familiar with a few very common ones like we used earlier with hover and focus.</p>
+        <pre><code>
+  <span class="text">.twitter<span class="pseudo">:hover</span>, .twitter<span class="pseudo">:focus</span> {
+    <span class="property">background-position:</span> <span class="value">0px -100px</span>
+  }</span>
+  <span class="text">.github<span class="pseudo">:hover</span>, .github<span class="pseudo">:focus</span> {
+    <span class="property">background-position:</span> <span class="value">-100px -100px</span>
+  }</span>
+        </code></pre>
+        <p>Let's take a look at another example where using pseudo classes can help simplify our CSS.</p>
+        <h4><strong>Zebra Striping</strong></h4>
+        <pre><code>
+  &lt;ul&gt;
+    &lt;li&gt; &lt;a href=<span class="value">"#lodging"</span>&gt;<span class="text">Lodging</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=<span class="value">"even"</span>&gt;&lt;a href=<span class="value">"#rentals"</span>&gt;<span class="text">Rentals</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#lessons"</span>&gt;<span class="text">Lessons</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=<span class="value">"even"</span>&gt;&lt;a href=<span class="value">"#menu"</span>&gt;<span class="text">Menu</span>&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+        </code></pre>
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.even {
+    <span class="property">background-color:</span> <span class="value">#444245;</span>
+  }</span>
+          </code></pre>
+          <ul class="zebra">
+            <li> <a href="#lodging">Lodging</a></li>
+            <li class="even"><a href="#rentals">Rentals</a></li>
+            <li><a href="#lessons">Lessons</a></li>
+            <li class="even"><a href="#menu">Menu</a></li>
+          </ul>
+
+        </div><!--/ .group -->
+        <p>In this case, we want to zebra stripe our list items to have differant colors.</p>
+        <p>Initially, we can have logic manually add these classes for us, but again, this is a bit unwieldy.</p>
+      </figure>
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h3>Pseudo Elements</h3>
+      <figure>
+        <h4><strong></strong></h4>
+        <p></p>
+        <!--  -->
+        <pre><code>
+  &lt;&gt;
+
+  <span class="text"></span>
+    <span class="property"></span>
+    <span class="value"></span>
+        </code></pre>
+      </figure>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <a href="index.html#fundamentals">Fundamentals</a>
+    <a href="clearing-floats.html">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+  <p>&copy; 2017 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

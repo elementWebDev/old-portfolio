@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/4.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4.1 | CSS3 Styles | Frontend Formations Level 4</title>
+</head>
+
+<body>
+<header>
+  <h1>CSS3 Styles</h1>
+  <nav>
+    <ul>
+      <li><a href="#border-radius">Border Radius</a></li>
+      <li><a href="#box-shadow">Box Shadow</a></li>
+      <li><a href="#text-shadow">Text Shadow</a></li>
+      <li><a href="#box-sizing">Box Sizing</a></li>
+      <li><a href="#multiple-backgrounds">Multiple Backgrounds</a></li>
+      <li><a href="#color">Color</a></li>
+      <li><a href="#opacity">Opacity</a></li>
+      <li><a href="#gradients">Gradients</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="border-radius"> 
+    <!-- Border Radius -->
+    <h2>Border Radius</h2>
+    <blockquote>The border-radius property applies rounded corners to borders.</blockquote>
+    <img src="img/border-radius.png" />
+    <p>.box</p>
+    <div class="box"></div>
+    <p>.box longhand version</p>
+    <div class="box box-1"></div>
+    <p>.box shorthand version</p>
+    <div class="box box-2"></div>
+    <p>.box varied sides</p>
+    <div class="box box-3"></div>
+    <p>.box percentages</p>
+    <div class="box box-4"></div>
+  </section>
+  <!-- Box Shadow -->
+  <section id="box-shadow">
+    <h2>Box-Shadow</h2>
+    <p>.box .box-shadow</p>
+    <div class="box box-shadow"></div>
+    <img src="img/box-shadow.png" /> 
+    <!-- box-shadow options -->
+    <div class="terms">
+      <p><strong>box-shadow:</strong> <a href="#inset" title="(optional)">inset</a> | <a href="#offset-x" title="left-right">offset-x</a> | <a href="#offset-y">offset-y</a> | <a heaf="#blur-radius">blur-radius</a> | <a href="#spread-radius">spread-radius</a> | <a href="#color">color</a></p>
+      <dl>
+        <dt id="inset">inset <em>(optional)</em></dt>
+        <dd>If it is not specified (which is the default), a <strong>drop shadow</strong> is created, rather than an <strong>inset shadow</strong>.</dd>
+        <dt id="offset-x">offset-x</dt>
+        <dd>The shadow offset <strong>x</strong> (left/right) value.</dd>
+        <dt id="offset-y">offset-y</dt>
+        <dd>The shadow offset <strong>y</strong> (up/down) value.</dd>
+        <dt id="blur-radius">blur-radius <em>(optional)</em></dt>
+        <dd>The <strong>blur-radius</strong> alters the amount of shadow, causing it to become <em>bigger</em> and <em>lighter</em> (with a larger value).</dd>
+        <dt id="spread-radius">spread-radius <em>(optional)</em></dt>
+        <dd>The <strong>spread-radius</strong> causes the shadow to <em>expand</em> or <em>shrink</em>.</dd>
+        <dt>color <em>(optional)</em></dt>
+        <dd>The <strong>color</strong> of the shadow.</dd>
+      </dl>
+    </div>
+    <div class="usage"> <img src="img/box-shadow2.png" alt="example usage"> <img src="img/box-shadow3.png" alt="no inset"> <img src="img/box-shadow4.png" alt="offset-x"> <img src="img/box-shadow5.png" alt="offset-y"> <img src="img/box-shadow-blur.png" alt="blur-radius"> <img src="img/box-shadow-spread.png" alt="spread-radius"> <img src="img/box-shadow-color.png" alt="color"> <img src="img/box-shadow-example.png" alt="example"> </div>
+    <p>What if we wanted the <strong>blur-radius</strong> value to instead be the <strong>spread-radius</strong>?</p>
+    <img src="img/box-shadow-spread-instead.png" alt="spread instead of blur"> <img src="img/box-shadow-blur-spread-example.png" alt="blur spread example"> <img src="img/box-shadows.png" alt="multiple box shadows" />
+    <div class="box box-shadows"></div>
+    <img src="img/box-shadow-negative-values.png" alt="negative values"> </section>
+  <section class="text-shadow" id="text-shadow"> 
+    <!-- Text Shadow -->
+    <h1>Text Shadow</h1>
+    <h2>I have a shadow!</h2>
+    <img src="img/text-shadow.png" alt="text-shadow usage"> </section>
+  <section id="box-sizing"> 
+    <!-- Box Sizing -->
+    <h3>Box Model Refresher</h3>
+    <ul>
+      <li>The CSS box model references the <em>design</em> and <em>layout</em> of given HTML elements</li>
+      <li>Each HTML element is a &ldquo;box&rdquo;, which consists of <em>margins</em>, <em>borders</em>, <em>padding</em>, and the <em>content</em> of the element</li>
+      <li>The &ldquo;box model&rdquo; refers to <em>how those properties are calculated</em> in conjunction with one another in order <em>to set the element’s dimensions</em></li>
+    </ul>
+    <figure> <img src="img/content.png" alt="content">
+      <figcaption>The <strong>content</strong> of the box is where the actual <em>content</em>, the <em>text</em> and <em>images</em>, is located</figcaption>
+    </figure>
+    <figure> <img src="img/padding.png" alt="padding">
+      <figcaption>The padding clears the area around the content</figcaption>
+    </figure>
+    <figure> <img src="img/border.png" alt="border">
+      <figcaption>The border goes around the padding and content:</figcaption>
+    </figure>
+    <figure> <img src="img/margin.png" alt="margin">
+      <figcaption>The margin clears the area around the border:</figcaption>
+    </figure>
+    <h3>Calculating the width of .box-model</h3>
+    <div class="box-model"></div>
+    <pre><code>
+.box {
+	border: 2px solid black;
+	margin: 20px;
+	padding: 10px;
+	width: 300px;
+}
+    </code></pre>
+    <figure> <img src="img/box-minus-margin.png" alt="box size doesn't include margin">
+      <figcaption>300 + 20 + 4 = 324</figcaption>
+    </figure>
+    <div>
+      <h3>Box Sizing</h3>
+      <blockquote>The <strong>box-sizing</strong> property is used to change the default CSS box model, which is used to <em>calculate widths and heights of given elements</em>.</blockquote>
+      <p>There are 3 different values for box-sizing:</p>
+      <ul>
+        <li>content-box</li>
+        <li>padding-box</li>
+        <li>border-box</li>
+      </ul>
+      <figure>
+        <h4>content-box</h4>
+        <p>This is the <strong>default value</strong>. The width and height are measured by including only the content, but not the border, margin, or padding.</p>
+      </figure>
+      <figure>
+        <h4>padding-box</h4>
+        <p>The width and height include the padding, but do not include the border or margin.</p>
+        <img src="img/padding-box.png" alt="padding-box"> <img src="img/padding-box-total.png" alt="padding-box total"> </figure>
+      <figure>
+        <h4>border-box</h4>
+        <p>The width and height include the padding and border, but <em>not</em> the margin.</p>
+        <img src="img/border-box.png" alt="border-box"> <img src="img/border-box-total.png" alt="border-box total"> </figure>
+      <h4></h4>
+    </div>
+  </section>
+  <section id="multiple-backgrounds">
+    <h3>Multiple Backgrounds</h3>
+    <blockquote>CSS3 allows you to apply <strong>multiple backgrounds</strong> to an element. They are stacked in the order in which you apply them.</blockquote>
+    <figure>
+      <p>First, specify your <strong>background-image</strong>s in a comma-delimited list:</p>
+      <pre><code>
+      .element {
+        background-image: url(bg1.png), url(bg2.png);
+      }
+    </code></pre>
+    </figure>
+    <figure>
+      <p>Then specify the <strong>background-position</strong> for each, in order</p>
+      <pre><code>
+      .element {
+        background-image: url(bg1.png), url(bg2.png);
+        background-position: top left, center right;
+      }
+    </code></pre>
+    </figure>
+    <figure>
+      <p>Finally, specify the <strong>background-repeat</strong> for each:</p>
+      <pre><code>
+      .element {
+        background-image: url(bg1.png), url(bg2.png);
+        background-position: top left, center right;
+        background-repeat: no-repeat, no-repeat;
+      }
+    </code></pre>
+    </figure>
+    <img src="img/multiple-background-images.png" alt="multiple background images">
+    <figure>
+      <p>You can also use the shorthand <strong>background</strong>:</p>
+      <pre><code>
+      .element {
+        background:
+          url(bg1.png) top left no-repeat,
+        
+      }
+    </code></pre>
+    </figure>
+    <figure>
+      <p>You can also use the shorthand <strong>background</strong>:</p>
+      <pre><code>
+      .element {
+        background:
+          url(bg1.png) top left no-repeat,
+          url(bg2.png) center right no-repeat;
+      }
+    </code></pre>
+    </figure>
+  </section>
+  <section id="color">
+    <h3>Color</h3>
+    <p>CSS3 provides multiple ways to work with color:</p>
+    <ul>
+      <li>RGBa</li>
+      <li>HSLa</li>
+    </ul>
+    <h4>RGBa</h4>
+    <blockquote><strong>RGB</strong> represents the 3 additive primary colors, red, green, and blue. In CSS3, we can also pass the alpha value (the &ldquo;a&rdquo; in <strong>RGBa</strong>), which represents the opacity of a color.</blockquote>
+    <figure>
+      <p>Example usage of <strong>rgba</strong>:</p>
+      <pre><code>
+      .element {
+      	color: rgba(0, 0, 0, 0.75);
+      }
+    </code></pre>
+    </figure>
+    <h4>HSLa</h4>
+    <blockquote>CSS3 also adds HSLa (Hue, Saturation, Lightness). In addition to providing the hue, saturation, and lightness values, you can specify the alpha value for the opacity of the color.</blockquote>
+    <figure>
+      <p>Example usage of <strong>hsla</strong>:</p>
+      <pre><code>
+      .element {
+      	color: hsla(240, 100%, 50%, 0.75);
+      }
+    </code></pre>
+    </figure>
+  </section>
+  <section id="opacity">
+    <h3>Opacity</h3>
+    <blockquote>CSS3 allows you to specify the <strong>opacity</strong> of an element using the <strong>opacity</strong> property.</blockquote>
+    <figure>
+      <figcaption>example usage of the <strong>opacity</strong> property:</figcaption>
+      <pre><code>
+      .element {
+      	opacity: 0.45;
+      }
+      </code></pre>
+    </figure>
+    <figure> <img src="img/seagulls.jpeg" alt="without opacity example"> <img src="img/seagulls.jpeg" class="opacity" alt="opacity example">
+      <figcaption>example output of the <strong>opacity</strong> property</figcaption>
+    </figure>
+  </section>
+  <section id="gradients">
+    <h3>Gradients</h3>
+    <h4>Linear Gradient</h4>
+    <blockquote>To create a <strong>linear gradient</strong>, we need to specify the starting point, the ending point, and optional stop-color points.</blockquote>
+    <figure>
+      <figcaption>Example usage of a <strong>linear-gradient</strong>:</figcaption>
+      <pre><code>
+        .element {
+          background: linear-gradient(to bottom, red, yellow);
+        }
+      </code></pre>
+    </figure>
+    <div class="box linear-gradient"></div>
+    <img src="img/linear-gradient.png" alt="linear direction">
+    <img src="img/linear-gradient-2.png" alt="linear direction">
+    <img src="img/linear-gradient-3.png" alt="linear direction">
+    <img src="img/linear-gradient-4.png" alt="linear direction">
+    <img src="img/linear-gradient-5.png" alt="linear direction">
+    <img src="img/linear-gradient-6.png" alt="linear direction">
+    <img src="img/linear-gradient-7.png" alt="linear direction">
+    <h4>Radial Gradient</h4>
+    <blockquote>A <strong>radial gradient</strong>, unlike a <strong>linear gradient</strong>, creates a gradient that <em>extends from an origin</em>, the center of the element, <em>extending outward in a circular or elliptical shape.</em><br />A <strong>radial-gradient</strong> consists of: <em>the center,the ending shape contour and position, color stops.</em></blockquote>
+    <div class="box box-4 radial-ellipse"></div>
+    <div class="circle radial-circle"></div>
+    <pre><code>
+      .element {
+        background: radial-gradient(circle at top left, aqua, blue);
+      }                       /* circle or ellipse */
+    </code></pre>
+  </section>
+</main>
+<footer>&copy; 2017 Ivan Huddleston</footer>
+</body>
+</html>

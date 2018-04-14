@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sven's Snowshoe Emporium</title>
+    <style>
+      li {
+        list-style-type: none;
+      }
+      a {text-decoration: none; color: grey;}
+      .sidebar a {
+        display: block;
+        line-height: 40px;
+      }
+      .sidebar .featured,
+      .sidebar .sales {
+        background: url(img/sidebar.png) no-repeat;
+        padding-left: 50px;
+      }
+      .sidebar .sales {
+        background-position: 0 -80px;
+      }
+      .sidebar .featured:hover,
+      .sidebar .featured:focus {
+        background-position: 0 -40px;
+      }
+      .sidebar .sales:hover,
+      .sidebar .sales:focus {
+        background-position: 0 -120px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="sidebar">
+      <ul>
+        <li><a class="sales" href="#">Sale Items</a></li>
+        <li><a class="featured" href="#">Men's</a></li>
+        <li><a class="featured" href="#">Women's</a></li>
+        <li><a class="featured" href="#">Children's</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

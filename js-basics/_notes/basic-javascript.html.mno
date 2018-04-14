@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="notes" value="Personal FCC Notes &#xD;&amp; Practice:&#xD;&#xD;* Format for display&#xD;  html css&#xD;  -- need to use seperate file ex. css/style.css&#xD;* Make Flash Cards (later)" />
+	<infoitem key="showOnOpen" value="true" />
+</info>

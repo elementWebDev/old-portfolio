@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Front-end Formations</title>
+</head>
+
+<body>
+<header>
+  <nav>
+    <p>&lt;&gt; Code School</p>
+    <!-- Style nav li {display: inline;} -->
+    <ul>
+      <li><a href="#new-input-types">New input types</a></li>
+      <li><a href="#new-form-elements">New Form Elements</a></li>
+      <li><a href="#new-form-attributes">New Form Attributes</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h1>Front-end Formations</h1>
+  <h2>HTML5 Forms</h2>
+  <section id="new-input-types" class="input-types">
+    <h2 id="new-input-types">New Input Types</h2>
+    <div class="input">
+      <h3>Search</h3>
+      <figure>
+        <blockquote>The input element with a type attribute whose value is &ldquo;search&rdquo; represents a one-line plain-text edit control for entering one or more search terms.</blockquote>
+        <figcaption>- W3C SPECIFICATION</figcaption>
+      </figure>
+      <pre><code>
+      &lt;input type=&ldquo;search&rdquo; /&gt;
+    </code></pre>
+      <input type="search" />
+      <figure> <img src="img/safari-keyboard-search.png">
+        <figcaption>Mobile Safari keyboard with the email input type</figcaption>
+      </figure>
+    </div>
+    <div class="input">
+      <h3>Email</h3>
+      <figure>
+        <blockquote>The input element with a type attribute whose value is &ldquo;search&rdquo; represents a one-line plain-text edit control for entering one or more search terms.</blockquote>
+        <figcaption>- W3C SPECIFICATION</figcaption>
+      </figure>
+      <pre><code>
+      <span>&lt;input type=</span>&ldquo;email&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="email" />
+      <figure> <img src="img/safari-keyboard-email.png">
+        <figcaption>Mobile Safari keyboard with the <strong>email</strong> input type</figcaption>
+      </figure>
+    </div>
+    <div class="input">
+      <h3>URL</h3>
+      <blockquote>The url input looks just like a regular text input, but with added usability on mobile devices.</blockquote>
+      <pre><code>
+      <span>&lt;input type=</span>&ldquo;url&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="url" />
+      <figure> <img src="img/safari-keyboard-url.png" alt="url keyboard" />
+        <figcaption>Mobile Safari keyboard with the <strong>url</strong> input type</figcaption>
+      </figure>
+    </div>
+    <div class="input">
+      <h3>Tel</h3>
+      <blockquote>Again, the tel input looks just like a regular text input, but with added usability on mobile devices.</blockquote>
+      <pre><code>
+      <span>&lt;input type=</span>&ldquo;tel&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="tel" />
+      <figure> <img src="img/safari-keyboard-tel.png" alt="tel keyboard" />
+        <figcaption>Mobile Safari keyboard with the <strong>tel</strong> input type</figcaption>
+      </figure>
+    </div>
+    <div class="input">
+      <h3>Number</h3>
+      <figure>
+        <blockquote>"The input element with a type attribute whose value is "<strong>number</strong>" represents a precise control for setting the element's value to a string representing a number.</blockquote>
+        <figcaption>- W3C SPECIFICATION</figcaption>
+      </figure>
+      <pre><code>
+      <span>&lt;input type=</span>&ldquo;number&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="number" />
+      <figure> <img src="img/number.png" alt="Number keyboard" />
+        <figcaption>Mobile Safari keyboard with the <strong>Number</strong> input type</figcaption>
+      </figure>
+    </div>
+    <div class="input">
+      <h3>Range</h3>
+      <figure>
+        <blockquote>"The input element with a type attribute whose value is "<strong>range</strong>" represents an imprecise control for setting the element's value to a string representing a number.</blockquote>
+        <figcaption>- W3C SPECIFICATION</figcaption>
+      </figure>
+      <pre><code>
+      <span>&lt;input type=</span>&ldquo;range&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="range" />
+      <figure> <img src="img/range.png" alt="Range keyboard" />
+        <figcaption>Mobile Safari keyboard with the <strong>Number</strong> input type</figcaption>
+      </figure>
+    </div>
+    <div class="input">
+      <h3>Date</h3>
+      <pre><code>
+        <span>&lt;input type=</span>&ldquo;date&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="date" />
+    </div>
+    <div class="input">
+      <h3>Month</h3>
+      <pre><code>
+        <span>&lt;input type=</span>&ldquo;month&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="month" />
+    </div>
+    <div class="input">
+      <h3>Week</h3>
+      <pre><code>
+        <span>&lt;input type=</span>&ldquo;week&rdquo; <span>/&gt;</span>
+      </code></pre>
+      <input type="week" />
+    </div>
+    <div class="input">
+      <h3>Time</h3>
+      <pre><code>
+        <span>&lt;input type=</span>"time" <span>/&gt;</span>
+      </code></pre>
+      <input type="time" />
+    </div>
+    <div class="input">
+      <h3>Datetime Local</h3>
+      <figure>
+        <blockquote>&ldquo;The input element with a type attribute whose value is "datetime-local" represents a control for setting the element’s value to a string representing a local date and time (with no timezone information).</blockquote>
+        <figacption>- W3C SPECIFICATION</figacption>
+      </figure>
+      <pre><code>
+        <span>&lt;input type=</span>"datetime-local" <span>/&gt;</span>
+      </code></pre>
+      <input type="datetime-local" />
+    </div>
+    <div class="input">
+      <h3>Color</h3>
+      <figure>
+        <blockquote>&ldquo;The input element with a type attribute whose value is "color" represents a color-well control, for setting the element’s value to a string representing a simple color.</blockquote>
+        <figacption>- W3C SPECIFICATION</figacption>
+      </figure>
+      <input type="color" />
+      <pre><code>
+        <span>&lt;input type=</span>"color" <span>/&gt;</span>
+      </code></pre>
+    </div>
+    <blockquote> <em>If a browser doesn’t support the input <strong>type</strong>, it defaults to “text”.</em> </blockquote>
+  </section>
+  <section id="new-form-elements">
+    <h2>New Form Elements</h2>
+    <div class="element">
+      <h3>Datalist</h3>
+      <blockquote>The <strong>datalist</strong> element represents a set of option elements that represent predefined options for other controls.</blockquote>
+      <p>Please enter your browser: <input type="text" list="browsers" /></p>
+      <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Internet Explorer">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+      <div>
+        <img src="img/datalist-1.png" />
+      </div>
+    </div>
+    <!--
+     <div class="element">
+      <h3>Keygen</h3>
+    </div>
+    
+     <div class="element">
+      <h3>Output</h3>  
+    </div>
+    -->
+  </section>
+  <section id="new-form-attributes">
+    <h2>New Form Attributes</h2>
+    <p><em>View Source to see other types</em></p>
+    <div class="attribute">
+      <h3>Placeholder</h3>
+      <blockquote>The <strong>placeholder</strong> attribute allows you to specify a message that is shown inside the input, hidden when the user starts typing, and then returns when focus is lost on the input (when the input is blank).</blockquote>
+      <input type="text" placeholder="Enter your email..." />
+      <pre><code>
+      &lt;input type="text" value="Enter your email..." /&gt;</code></pre>
+      <p>if you use "value" a user would have to delete the text first, then enter their information</p>
+      <p>&nbsp;</p>
+      <p>instead... use placeholder:</p>
+      <pre><code>
+      &lt;input type="placeholder" value="Enter your email..." /&gt;
+      </code></pre>
+    </div>
+    
+    <div class="attribute">
+      <h3>Autofocus</h3>
+      <blockquote>The autofocus attribute will automatically focus the specified input when the page is rendered.</blockquote>
+      <pre><code>
+      &lt;input type=&ldquo;text&rdquo; autofocus /&gt;
+      </code></pre>
+      <input type="text" autofocus />
+      <div><img src="img/autofocus.png" alt="autofocus"></div>
+    </div>
+    <!--<div class="attribute">
+      Autofocus
+    </div>-->
+    <div class="attribute">
+      <h3>Required</h3>
+      <blockquote>If you add the new HTML5 required attribute to an input, when the form is submitted, the user will be notified of an error if the field is left blank.</blockquote>
+      <pre><code>
+      &lt;input type=&ldquo;text&rdquo; required /&gt;
+      </code></pre>
+      <input type="text" required />
+    </div>
+    <div class="attribute">
+      <h3>Pattern</h3>
+      <blockquote>The pattern attribute accepts a JavaScript regular expression that can be used to validate a form field to match the pattern</blockquote>
+      <pre><code>
+        &lt;input type="text" pattern="[0-9]{3}" /&gt;
+      </code></pre>
+      <input type="text" pattern="[0-9]{3}" />
+      <div><img src="img/pattern.png" alt="pattern example" /></div>
+    </div>
+    <!--<div class="attribute">
+      List
+    </div>
+    <div class="attribute">
+      Multiple
+    </div>
+    <div class="attribute">
+      novalidate
+    </div>
+    <div class="attribute">
+      formnovalidate
+    </div>
+    <div class="attribute">
+      form
+    </div>
+    <div class="attribute">
+      formaction
+    </div>
+    <div class="attribute">
+      formenctype
+    </div>
+    <div class="attribute">
+      formmethod
+    </div>
+    <div class="attribute">
+      formtarget
+    </div>-->
+  </section>
+</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

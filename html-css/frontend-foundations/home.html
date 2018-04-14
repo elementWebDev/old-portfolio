@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Front End Foundations</title>
+  <link type="text/css" rel="stylesheet" href="css/main.css">
+  <!--
+    Generally speaking, first declare the broadest rules with type selectors, and then get more specific with class selectors. This way, the broader rules cascade down and become defaults, and more specific rules can change the defaults.
+  -->
+</head>
+<!--
+  Writing class and type selectors:
+    - when you're just using type selectors, the order doesn't really matter
+    - when you start combining them with class selectors - the ORDER MATTERS
+-->
+<body>
+<div class="header">
+  <h1>Recipe World</h1>
+  <ul class="nav">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="suggest.html">Suggest</a></li>
+  </ul>
+</div>
+<div class="main-content">
+  <h2>Home</h2>
+  <div class="featured-image">
+    <h3>Featured: Magic Cake</h3>
+    <img src="img/featured-cake.png" alt="Magic Cake">
+  </div>
+</div>
+</body>
+</html>

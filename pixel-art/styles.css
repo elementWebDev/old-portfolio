@@ -1,0 +1,130 @@
+body {
+    text-align: center;
+    align-content: center;
+    color: #ddd;
+    font-size: 24px;
+    font-family: monospace;
+    background-color: #333;
+    color: #999;
+  /*   margin: 0 auto; */
+  }
+  
+  h1 {
+    font-family: Monoton;
+    font-size: 60px;
+    margin: 0.2em;
+    text-shadow: 1px 1px 2px #000, 2px 2px 2px #0a0;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  
+  h2,
+  h3 {
+    font-family: "VT323", monospace;
+    color: #00aa00;
+    text-shadow: 1px 1px 1px #444, -1px -1px 1px #000;
+  }
+  
+  h2 {
+    margin: 2em 0 0.6em;
+  }
+  
+  h2:first-of-type {
+    margin-top: 0.6em;
+  }
+  h2.character {
+    color: #aaa;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  table,
+  tr,
+  td {
+    border: 1px solid #444;
+    border: 1px solid #666;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #333;
+    -webkit-box-shadow: 1px 1px 2px #000, 1px 1px 2px #090;
+    box-shadow: 1px 1px 2px #000, 1px 1px 2px #090;
+    background-color: #222;
+    background-image: url('https://elementwebdev.com/gwg/img/mario.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: -1px 0;
+    -webkit-box-shadow: 2px 2px 3px #555;
+    box-shadow: 2px 2px 3px #555;
+  }
+  
+  tr {
+    height: 20px;
+  }
+  
+  td {
+    width: 20px;
+  }
+  form {
+    margin: 0 auto;
+  }
+  
+  input {
+    background-color: #333;
+    color: #0a0;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 0.5em;
+    margin: 1em;
+  }
+  
+  input[type="number"] {
+    width: 3em;
+  }
+  
+  .wrapper {
+    margin: 0 auto;
+  }
+  .hero {
+    margin: 1em;
+  }
+  span.mario {
+    color: #aa0000;
+  }
+  span.luigi {
+    color: #00aa00;
+  }
+  .groups {
+    margin: auto;
+  }
+  .group {
+    background-color: #222;
+    border: 2px solid #555;
+    border-radius: 8px;
+    max-width: 100%;
+    padding: 1em;
+    margin: 0 auto;
+  }
+  .clear {
+    clear: both;
+  }
+  
+  @media screen and (min-width: 968px) {
+    body {
+      margin: 1em auto;
+    }
+    .group {
+      margin: 1em auto;
+      box-sizing: border-box;
+      float: left;
+      width: 32%;
+      margin: 0 auto;
+      display: inline-block;
+    }
+  }
+  
