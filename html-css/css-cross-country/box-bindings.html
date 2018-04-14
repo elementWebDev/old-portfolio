@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Box Bindings | CSS Cross Country</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/box-bindings.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Edit Links accordingly -->
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> Code School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+<aside>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="./index.html#fundamentals">Fundamentals</a>
+    <a href="./index.html#clearing-floats">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+</aside>
+<main>
+  <!-- Path HTML/CSS | Course 3 | Level 3 -->
+  <h2>Box Bindings</h2>
+  <section>
+    <!-- 3.3.1 -->
+    <!-- Box Bindings | The Box Model -->
+    <article>
+      <h3>The Box Model</h3>
+      <h4>An imaginary diagram that outlines each <strong>DOM element</strong></h4>
+      <img src="img/dom-outline.png" alt="DOM Outline">
+      <h4><strong>Width:</strong></h4>
+      <figure class="group">
+        <h5><strong>Total</strong> calculated <strong>box width</strong> =</h5>
+        <p><code>content width + padding width + border width</code></p>
+        <pre class="pre-md"><code>
+  .downhill {
+    border: 5px solid #000;
+    padding-left: 10px;
+    padding-right: 5px;
+    width: 100px;
+  }
+        </code></pre>
+        <p>&nbsp;100px <em>content width</em></p>
+        <p>&nbsp; 15px <em>padding width</em></p>
+        <p>+ 10px <em>border width</em></p>
+        <p>_______________</p>
+        <p>&nbsp; <strong>125px</strong> <em>box width</em></p>
+        <div class="downhill">
+          <div class="downhill-padding"></div>
+        </div>
+      </figure>
+      <!-- -->
+      <figure class="group">
+        <h5><strong>When adapting a design</strong>, you'll need to calculate the content width</h5>
+        <pre class="pre-md"><code>
+  .downhill {
+    border: 1px solid #000;
+    padding-left: 14px;
+    padding-right: 14px;
+    width: <strong>?</strong>
+  }
+        </code></pre>
+        <p>&nbsp;<strong>340px</strong> <em>box width (design)</em></p>
+        <p>&nbsp; <strong>28px</strong> <em>padding width</em></p>
+        <p>+ <strong>2px</strong> <em>border width</em></p>
+        <p>_______________</p>
+        <p><strong>310px</strong> <em>content width</em></p>
+        <div class="downhill-2">
+          <div class="downhill-padding-2"></div>
+        </div>
+      </figure>
+      <h4>The <strong>overflow</strong> property:</h4>
+      <figure>
+        <pre><code>
+  overflow: <strong>visible</strong> | auto | hidden | scroll
+        </code></pre>
+        <p><strong><code>visible</code></strong> - the default value, which allows content to extend beyond container boundaries</p>
+        <!-- visible -->
+        <div class="overflow overflow-visible">
+          <div class="overflow-box"></div>
+          <div class="overflow-text ">
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+          </div>
+        </div>
+        <!-- auto -->
+        <pre><code>
+  overflow: visible | <strong>auto</strong> | hidden | scroll
+        </code></pre>
+        <p><strong><code>auto</code></strong> - adds a scrollbar as needed when content overflows</p>
+        <div class="overflow overflow-auto">
+          <div class="overflow-box"></div>
+          <div class="overflow-text">
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+          </div>
+        </div>
+        <!-- hidden -->
+        <pre><code>
+  overflow: visible | auto | <strong>hidden</strong> | scroll
+        </code></pre>
+        <p><strong><code>hidden</code></strong> - hides content that extends beyond the container</p>
+        <div class="overflow overflow-hidden">
+          <div class="overflow-box"></div>
+          <div class="overflow-text">
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+            _________________________<br />
+            ___________________________<br />
+          </div>
+        </div>
+        <!-- scroll -->
+        <pre><code>
+  overflow: visible | auto | hidden | <strong>scroll</strong>
+        </code></pre>
+        <p><strong><code>scroll</code></strong> - adds a scrollbar at all times, even if unneeded</p>
+        <div class="overflow overflow-scroll">
+          <div class="overflow-box-2"></div>
+          <div class="overflow-text">
+            ________________________<br />
+            ______________________<br />
+            ________________________
+          </div>
+        </div>
+      </figure>
+    </article>
+  </section>
+  <section>
+    <!-- 3.3.2 -->
+    <!-- Box Bindings | Positioning -->
+    <article>
+      <h3>Positioning</h3>
+      <h4>Elements have a position value of <strong>static</strong> by default:</h4>
+      <figure class="positioning">
+        <pre><code>
+  position: <strong>static</strong> | relative | absolute | fixed
+        </code></pre>
+        <p>Using a value other than static causes an object to become a <em>positioned element.</em></p>
+        <p>Positioned elements may use <code>top, left, bottom,</code> and <code>right</code> properties for placement.</p>
+      </figure>
+      <h4><strong>Relative</strong> positioning</h4>
+      <figure class="group positioning">
+        <pre><code>
+  position: static | <strong>relative</strong> | absolute | fixed
+        </code></pre>
+        <p>Renders in the normal flow, then shifted via positioning properties</p>
+        <pre><code>
+  &lt;article&gt;
+    &lt;h2&gt;Sven's SnowshoeX&lt;sup&gt;2&lt;/sup&gt;&lt;/h2&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-mid"><code>
+  sup {
+    <span>font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;</span>
+    position: <strong>relative</strong>;
+    top: -0.5em;
+  }
+        </code></pre>
+        <br />
+        <h2>Sven's SnowshoeX,<sup>2</sup></h2>
+      </figure>
+      <h4><strong>Absolute</strong> positioning</h4>
+      <figure class="group positioning">
+        <pre><code>
+  position: static | relative | <strong>absolute</strong> | fixed
+        </code></pre>
+        <p>Takes an element out of the normal flow for manual positioning</p>
+        <pre><code>
+  &lt;article&gt;
+    &lt;h2&gt;Sven's SnowshoeX&lt;sup&gt;2&lt;/sup&gt;&lt;/h2&gt;
+    <strong>&lt;h3&gt;</strong>By: Sven<strong>&lt;/h3&gt;</strong>
+    &lt;p&gt;This season's hot styles, available now!&lt;/p&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <p>Below the h3 gets pushed outside the container when the window is larger than the container.</p>
+        <img src="img/positioning-absolute-red-flag.png" alt="absolute postioning">
+        <pre class="pre-mid"><code>
+  h3 {
+    position: <strong>absolute</strong>;
+    right: 10px;
+    top: 10px;
+  }
+        </code></pre>
+        <p>Here is the proper way to set the position, so that if the window is larger the content stays within the parent container.</p>
+        <img src="img/positioning-absolute-correct.png" alt="correct absolute postioning">
+        <pre class="pre-mid"><code>
+  <strong>article</strong> {
+    position: <strong>relative</strong>;
+  }
+  <strong>h3</strong> {
+    position: <strong>absolute</strong>;
+    right: 10px;
+    top: 10px;
+  }
+        </code></pre>
+      </figure>
+        <h4><strong>Fixed</strong> positioning</h4>
+      <figure class="group positioning">
+         <pre><code>
+  position: static | relative | absolute | <strong>fixed</strong>
+        </code></pre>
+        <p>Affixes an element to a specific place in the <strong>window</strong>, <em>not element</em> where it will stay <strong>regarless of scrolling</strong></p>
+        <pre class="pre-mid"><code>
+  .ski {
+    <strong>position: fixed;</strong>
+    right: 10px;
+    top: 10px;
+  }
+        </code></pre>
+        <img src="img/positioning-fixed.png" alt="">
+      </figure>
+    </article>
+  </section>
+  <section>
+    <!-- 3.3.3 -->
+    <!-- Box Bindings | z-index -->
+    <article>
+      <h3>Z-Index</h3>
+      <h4>manually adjusting overlap:</h4>
+      <figure class="group">
+        <p>No <code>z-index</code> = overlap determined by placement in DOM</p>
+        <pre><code>
+  &lt;article&gt;
+  &lt;img class="ski" src="ski.jpg" alt="Ski!" /&gt;
+  &lt;img class="sled" src="sled.jpg" alt="Sled!" /&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-sm"><code>
+  .ski, .sled {
+    <strong>z-index:</strong> 1;
+  }
+        </code></pre>
+        <div class="z-index-container">
+          <div class="ski"><p>Ski!</p></div>
+          <div class="sled"><p>Sled!</p></div>
+        </div>
+        <p>Higher values appear above lower values</p>
+        <pre><code>
+  &lt;article&gt;
+  &lt;img class="ski" src="ski.jpg" alt="Ski!" /&gt;
+  &lt;img class="sled" src="sled.jpg" alt="Sled!" /&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-sm"><code>
+  .ski {
+    <strong>z-index:</strong> 1;
+  }
+        </code></pre>
+        <div class="z-index-container">
+          <div class="ski ski-2"><p>Ski!</p></div>
+          <div class="sled"><p>Sled!</p></div>
+        </div>
+        <p>Elements must be positioned for <code>z-index</code> to take effect. Use <code>relative</code> if you're not interested in moving the object.</p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index">See more info</a> on Mozilla Developer Network</p>
+      </figure>
+    </article>
+  </section>
+
+</main>
+<!-- Edit Links accordingly -->
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <p>Levels</p>
+    <a href="index.html">Fundamentals</a>
+    <a href="clearing-floats.html">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+  <p>&copy; 2017 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* CSS Document */
+body{
+  background-color: #333;
+  color: #ccc;
+}
+.container-fluid {
+  margin-top: 60px;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #00cc00;
+}
+pre {
+  margin-left: 25px;
+  background-color: #222;
+  color: #ccc;
+  max-width: 500px;
+}
+.solutions {
+  margin: 0 auto;
+}
+
+.navbar-inverse {
+  background-color: #23A341;
+  color: #000;
+}
+a.navbar-brand {
+  background-color: #333;
+  color: #eee;
+}
+.highlight > a {
+  background-color: #333;
+}
+.portfolio {
+  background-color: #eee;
+  padding: 5%;
+}
+.profile-pic{
+  margin: 0 auto;
+  max-width: 250px;
+}
+.btn {
+  background-color: #23A341;
+  border: 1px solid #000;
+  box-shadow: 1px 1px #333;
+}
+.btn a {
+  color: #eee;
+}
+.btn a:hover {
+  color: #ccc;
+}
+footer {
+  padding: 1%;
+  border: 1px solid #000;
+  background-color: #23A341;
+  background-size: cover;
+}
+a:hover {
+  text-decoration: none;
+}
+a.glyphicon-menu-hamburger {
+  color: #111;
+}

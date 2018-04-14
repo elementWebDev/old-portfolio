@@ -1,0 +1,19 @@
+* {
+  margin:0;
+
+}
+.runner {
+  width: 266.6667px; /* width divided by steps (images) */
+  height: 200px;
+  background: url(../img/runner.png);
+  animation: run 1s steps(24) infinite, slide 5s steps(100) infinite;
+  -webkit-animation: run 1s steps(24) infinite, slide 5s steps(100) infinite;
+  margin-left: 100%;
+}
+@keyframes run {
+  100% {background-position: -6400px;}
+}
+
+@keyframes slide {
+  100% {margin-left: 266.6667px;}
+}

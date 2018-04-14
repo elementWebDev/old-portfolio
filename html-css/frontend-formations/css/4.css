@@ -1,0 +1,208 @@
+/* CSS3 Styles */
+
+/* RESET */
+
+body {
+  text-align: center;
+}
+nav {
+/* background: linear-gradient(0deg, #3e606f, #324d59); */
+}
+
+section {
+  margin: 0 auto;
+  padding: 20px 15px 40px 15px;
+  border-top: 1px solid #999;
+}
+h1, h2, h3, h4 {
+  width: 100%
+}
+h4 {
+  font-size: 22px;
+  font-variant: small-caps;
+  padding-bottom: 0;
+}
+p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+blockquote {
+  text-align: left;
+}
+ul {
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 25px;
+}
+ul li {
+  padding-bottom: 8px;
+}
+nav ul {
+  line-height: 2em;
+}
+ol {
+  padding-left: 15px;
+  text-align: left;
+}
+ol li {
+  padding-bottom: 8px;
+}
+dl {
+  font-family: Arial, sans-serif;
+  font-size: .8em;
+}
+dt {
+  text-align: left;
+  font-weight: bold;
+}
+dt em {
+  font-weight: normal;
+}
+dd {
+  text-align: left;
+  margin-bottom: 1em;
+}
+img {
+  max-width: 100%;
+  margin: 25px 0;
+}
+figure {
+  padding: 8px;
+  border: 1px solid #aaa;
+}
+figure p{
+  text-align: left;
+}
+strong {
+  color: #a00;
+}
+pre, code {
+  text-align: left;
+  background-color: #222;
+  color: #ccc;
+	padding-left: 8px;
+}
+code strong {
+  color: #c66;
+}
+/* end reset */
+
+/* Frontend Formations Level 4 */
+/* BORDER RADIUS */
+.box {
+  background: grey;
+  height: 50px;
+  width: 200px;
+  margin: 0 auto;
+}
+/* <top left> <top right> <bottom right> <bottom left> */
+.box-1 {
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   border-bottom-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+}
+/* short-hand border-radius */
+.box-2 {
+  border-radius: 15px;
+}
+/* varied sides */
+.box-3 {
+  border-radius: 4px 15px 12px 10px;
+}
+.box-4 {
+  border-radius: 50%;
+}
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+/* box shadow */
+.box-shadow {
+  box-shadow: 1px 2px 2px #000;
+}
+.box-shadows {
+  box-shadow:
+    1px 1px 2px #000,
+    inset 1px 1px 2px blue;
+}
+/* text shadow */
+.text-shadow h2 {
+  color: #fff;
+  text-shadow: 1px 2px 2px #000;
+}
+/* opacity */
+.opacity {
+	opacity: 0.45;
+}
+.linear-gradient {
+  /*background: -webkit-linear-gradient(red, yellow);
+  background: -o-linear-gradient(red, yellow);*/
+  background: linear-gradient(red, yellow);
+}
+.radial-circle {
+  background:
+    radial-gradient(circle, aqua, blue);
+}
+.radial-ellipse {
+  background:
+    radial-gradient(ellipse, aqua, blue);
+}
+.box-sm {
+  margin: 0 auto;
+  width: 20px;
+  height: 30px;
+  /*transform: translate(20px, 30px);*/ /* not supported */
+  background: #000;
+}
+.rotate {
+  transform: rotate(45deg);
+}
+.scale {
+  transform: scale(1.2);
+}
+.scalex {
+    transform: scaleY(1.2);
+}
+.scaley {
+    transform: scaleY(0.3);
+}
+.skewx {
+  transform: skewX(25deg);  
+}
+.skewy {
+  transform: skewY(-85deg);
+}
+.transition-1 {
+  background-color: black;
+  transition: background-color 0.2s ease-in-out;
+}
+.transition-1:hover {
+  background-color: blue;
+}
+.transition-long {
+  background-color: black;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+}
+.transition-long:hover {
+  background-color: blue;
+}
+.transition-all {
+  background-color: black;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.transition-all:hover {
+  background-color: grey;
+  color: black;
+}
+.progressive{
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+}

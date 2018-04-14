@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Cross Country | CodeSchool Notes</title>
+<script src="https://use.fontawesome.com/eed5370dd8.js"></script>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/sprites.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> Code School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+
+<!-- links float when min-width 768px -->
+<aside>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="./index.html#fundamentals">Fundamentals</a>
+    <a href="./index.html#clearing-floats">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+</aside>
+<main>
+  <!-- Path HTML/CSS | Course 3 | Level 7 -->
+  <h2>Sprightly Slaloms</h2>
+
+  <section>
+    <article>
+      <h3>Image Replacement</h3>
+      <figure>
+        <h4>Add <strong>descriptive text</strong> to image-replaced elements</h4>
+        <p>Now that we know when to use images in our layout, lets take a look at a logo that's being added as a background image in our CSS.</p>
+        <p>In this case, Sven's Snowshoe Superstore has been doing extremely well, and is now Sven's Snowshoe Emporium.</p>
+        <p>So, on their website we're going to include their logo as a background image. This type of example work, but we're using an empty element for the anchor tag in which the logo is being added.</p>
+
+        <pre><code>
+  &lt;a href=<span class="value">"#"</span> class=<span class="value">"logo"</span>&gt;&lt;/a&gt;
+        </code></pre>
+        <!-- Clear for float -->
+        <!-- add warning -->
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.logo {</span>
+    <span class="property">background:</span> <span class="value">url(logo.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span> <span class="value">200px;</span>
+  <span class="text">}</span>
+          </code></pre>
+
+          <a href="#" class="logo"></a><img src="img/warning.png" alt="warning" class="warn">
+
+
+        </div><!--/end clear  -->
+        <p>This is not best practice, because, if CSS is turned off, or if a screen reader is trying to read this, they won't be able to tell what content is on the image.</p>
+        <p>Let's go ahead and add the text that appears on the image to our element.</p>
+
+        <pre><code>
+  &lt;a href=<span class="value">"#"</span> class=<span class="value">"logo"</span>&gt;Sven's Snowshoe Emporium&lt;/a&gt;
+        </code></pre>
+        <!-- Clear for float -->
+        <!-- add warning -->
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.logo {</span>
+    <span class="property">background:</span> <span class="value">url(logo.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span> <span class="value">200px;</span>
+  <span class="text">}</span>
+          </code></pre>
+
+          <a href="#" class="logo">Sven's Snowshoe Emporium</a><img src="img/warning.png" alt="warning" class="warn warn-link">
+        </div><!--/end clear  -->
+
+        <p>Now, as you might expect, that text appears on top of our image which isnt desired.</p>
+
+        <h4>How can we fix this?</h4>
+
+        <pre><code>
+  &lt;a href=<span class="value">"#"</span> class=<span class="value">"logo"</span>&gt;Sven's Snowshoe Emporium&lt;/a&gt;
+        </code></pre>
+        <!-- Clear for float -->
+        <!-- add warning -->
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.logo {</span>
+    <span class="property">background:</span> <span class="value">url(logo.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span> <span class="value">200px;</span>
+    <span class="property">text-indent:</span> <span class="value">-9999px;</span>
+  <span class="text">}</span>
+          </code></pre>
+
+          <a href="#" class="logo logo-indent">Sven's Snowshoe Emporium</a><img src="img/check2.png" alt="correct" class="warn correct-link">
+        </div><!--/end clear  -->
+        <p>By using the text indent property of CSS, we can move the text out of the viewport, so we can still have the placeholder text but have the image replace the text.</p>
+
+      </figure>
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h3>Sprites</h3>
+      <figure>
+        <h4>Adding <strong>Images for Different States</strong></h4>
+        <p>Lets take a look back at the image we replaced, Sven's Snowshoe Emporium logo, and let's say we want to add a hover state, which has a second image there.</p>
+        <pre><code>
+  &lt;a href=<span class="value">"#"</span> class=<span class="value">"logo"</span>&gt;Sven's Snowshoe Emporium&lt;/a&gt;
+        </code></pre>
+        <!-- Clear for float -->
+        <!-- add warning -->
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.logo {</span>
+    <span class="property">background:</span> <span class="value">url(logo.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span> <span class="value">200px;</span>
+    <span class="property">text-indent:</span> <span class="value">-9999px;</span>
+  <span class="text">}</span>
+  <span class="text">.logo</span><span class="pseudo">:hover</span><span class="text">, .logo</span><span class="pseudo">:focus</span> <span class="text">{</span>
+    <span class="property">background:</span> <span class="value">url(hover.png);</span>
+  <span class="text">}</span>
+          </code></pre>
+
+          <a href="#" class="logo logo-indent">Sven's Snowshoe Emporium</a>
+          <a href="#" class="logo logo-dark logo-dark-margin logo-indent">Sven's Snowshoe Emporium</a><img src="img/warning.png" alt="correct" class="warn correct-link">
+        </div><!--/end clear  -->
+        <p>We have the initial code, and we're adding a hover and focus state for that logo that will show a second image when either of those states occur.</p>
+
+        <h4><strong>Swapping Background Image Issues</strong></h4>
+        <p>This works fine, but when the hover or focus state triggers that second image has to be loaded.</p>
+        <p>So we're making a second HTTP request, and since that image is not preloaded, there's going to be a flash while that image loads, which will look something like this.</p>
+
+        <!-- 2 seperate background images in CSS -->
+        <a href="#" class="logo logo-indent logo-blue center">Sven's Snowshoe Emporium</a>
+        <h4>To combat this, <strong>combine both</strong> of those logo <strong>images into one file</strong>.</h4>
+
+        <p>That logo is going to look something like this, where the total height of our image is 200px, and the height of each logo is 100px.</p>
+        <img src="img/svens.png" class="center" alt="combined logo">
+
+        <h4>Using <strong>background-position</strong></h4>
+
+        <p>Going back to our example, we're going to replace that hover and focus state with background position.</p>
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.logo {</span>
+    <span class="property">background:</span> <span class="value">url(logo.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span> <span class="value">200px;</span>
+    <span class="property">text-indent:</span> <span class="value">-9999px;</span>
+  <span class="text">}</span>
+  <span class="text">.logo</span><span class="pseudo">:hover</span><span class="text">, .logo</span><span class="pseudo">:focus</span> <span class="text">{</span>
+    <span class="property">background-position:</span> <span class="value">0 -100px;</span>
+  <span class="text">}</span>
+          </code></pre>
+
+          <a href="#" class="logo logo-full logo-indent">Sven's Snowshoe Emporium</a><img src="img/check2.png" alt="correct" class="warn correct-link">
+        </div><!--/end clear  -->
+        <p>What background-position will allow us to do is change the orientation of the image inside of the element.</p>
+        <p>So, in this case, we'll add a background position of zero and negative 100.</p>
+        <p>The first value in our background position property will be the x-axis shift, and the second value the y-axis shift.</p>
+        <p>With this background position applied, when the user hovers or focuses on the logo, the orientation of the background image will shift up 100 pixels so our second version is shown to the user.</p>
+
+<!--
+        Image below needed? -
+          This seems pretty redundant and with no graphical explanation
+ -->
+        <img src="img/svens.png" class="center" alt="combined logo">
+
+        <p>Also of note, in our original logo declaration we didn't need to set the background-position because it defaults to zero zero, which is the correct orientation for the default state of our logo.</p>
+
+        <h4><strong>Advantages</strong> to the <strong>Sprite</strong> approach</h4>
+        <ul>
+          <li>Reduces number of HTTP image requests</li>
+          <li>Removes Loading flash / need for preload</li>
+        </ul>
+        <p>When using sprites we have the advantage of not needing a second HTTP request, and we don't need to worry about using crazy means to preload our images.</p>
+        <p>There are many examples on the web of using sprites, as seen below.</p>
+        <div class="group">
+          <img class="left" src="img/gmail_sprites.png" alt="Gmail Sprites">
+          <img class="right" src="img/sprite-action-black.png" alt="Generic Sprites">
+        </div><!--/end group clear -->
+
+        <!-- Multiple Images & States -->
+        <h4><strong>Multiple images</strong> &amp; <strong>States</strong></h4>
+        <p>Let's take a look at a bit more complicated example using sprites.</p>
+        <img class="center" src="img/social.png" alt="Twitter Github sprite">
+        <p>In this case, we have two seperate icons, one for Twitter and one for Github, and both will have their own seperate hover state.</p>
+        <p>Each of the icon parts will be 100 pixels wide and 100 pixels tall for a total image width and height of 200 pixels.</p>
+        <img class="center" src="img/twitter-github-sprite-v-h.png" alt="twitter github sprite with height and width">
+
+        <p>Here's the initial bit of code for our icons. Let's set up our base code to have two list items with anchors inside that are set up next to each other with a bit of spacing in between.</p>
+
+        <div class="group">
+          <pre><code>
+  &lt;ul class=<span class="value">"group"</span>&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#"</span> class=<span class="value">"twitter"</span>&gt;<span class="text">Twitter</span>&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=<span class="value">"#"</span> class=<span class="value">"github"</span>&gt;<span class="text">Github</span>&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+          </code></pre>
+          <pre class="pre-mid"><code>
+  <span class="text">li {</span>
+    <span class="property">float:</span> <span class="value">left;</span>
+    <span class="property">margin-right:</span> <span class="value">10px;</span>
+          </code></pre>
+          <ul class="group">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Github</a></li>
+            <li><img src="img/warning.png" class="warn" alt="warning"></li>
+          </ul>
+        </div>
+        <p>This example is assuming that your using some sort of reset on our list items, otherwise you will need to seperately reset the default styles for li's.</p>
+        <p>When this renders as you can see, we're just seeing the text in both of those anchors.</p>
+        <p>Let's move on to our image replacement.</p>
+        <p>First, we'll setup the shared styles for both the Twitter and Github icons using image replacement.</p>
+
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.twitter, .github {</span>
+    <span class="property">background:</span> <span class="value">url(social.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span>  <span class="value">100px;</span>
+    <span class="property">text-indent:</span> <span class="value">-9999px;</span>
+  <span class="text">}</span>
+          </code></pre>
+          <ul class="group">
+            <li><a href="#" class="twitter-no-hover">Twitter</a></li>
+            <!-- using twitter class below for demonstration only -->
+            <li><a href="#" class="twitter-no-hover">Github</a></li>
+            <li><img  class="warn" src="img/warning.png" alt="warning"></li>
+          </ul>
+        </div>
+        <p>As you can see, now we have the Twitter icon for both, but we need that Github icon to appear in Github's place.</p>
+
+        <p>Using the background position property, we can shift our sprite 100 pixels to the left so that the GitHub icon in it's resting state will have the correct image.</p>
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.twitter, .github {</span>
+    <span class="property">background:</span> <span class="value">url(social.png);</span>
+    <span class="property">display:</span> <span class="value">block;</span>
+    <span class="property">height:</span> <span class="value">100px;</span>
+    <span class="property">width:</span>  <span class="value">100px;</span>
+    <span class="property">text-indent:</span> <span class="value">-9999px;</span>
+  <span class="text">}</span>
+          </code></pre>
+          <ul class="group">
+            <li><a href="#" class="twitter-no-hover">Twitter</a></li>
+            <li><a href="#" class="github-no-hover">Github</a></li>
+          </ul>
+        </div>
+
+        <p>Now we can add both hover and focus states to each of the Twitter and GitHub icons so that on hover, the images will shift down 100 pixels to show their hover state like so.</p>
+        <div class="group">
+          <pre class="pre-mid"><code>
+  <span class="text">.twitter<span class="pseudo">:hover</span>, .twitter<span class="pseudo">:focus</span> {
+    <span class="property">background-position:</span> <span class="value">0px -100px</span>
+  }</span>
+  <span class="text">.github<span class="pseudo">:hover</span>, .github<span class="pseudo">:focus</span> {
+    <span class="property">background-position:</span> <span class="value">-100px -100px</span>
+  }</span>
+          </code></pre>
+          <span>Hint: hover over images</span>
+
+          <ul class="group">
+            <li><a href="#" class="twitter">Twitter</a></li>
+            <li><a href="#" class="github">Github</a></li>
+            <li><img  class="warn" src="img/check2.png" alt="correct"></li>
+          </ul>
+
+        </div>
+        <p>There are a number of great tools online for dealing with sprites, including <a href="http://http://css.spritegen.com/" target="_blank">CSS Sprite Generator</a>.</p>
+
+        <h4><strong>base64</strong> encoding</h4>
+        <ul>
+          <li>Directly embed images into your CSS</li>
+          <li>IE8+</li>
+        </ul>
+        <p>One last consideration in dealing with image replacement is the base 64 method of encoding images directly into our CSS, HTML, or JavaScript.</p>
+        <pre><code>
+  <span class="property">background-image:</span> <span class="value">url(data:image/png;base64, iVB0...;)</span>
+        </code></pre>
+        <p>Using this method with syntax that looks something like this, we can directly encode the images into our code and that allows us to not need to use sprites or include seperate images.</p>
+        <p>But it's only available for versions of IE 8 or greater.</p>
+        <p>Click <a href="https://www.davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to/" target="_blank">here</a> you'd like to learn more about this.</p>
+
+
+        <!--
+        <pre><code>
+  &lt;&gt;
+  <span class="text"></span>
+    <span class="property"></span> <span class="value"></span>
+        </code></pre>
+-->
+      </figure>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <a href="index.html#fundamentals">Fundamentals</a>
+    <a href="clearing-floats.html">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+  <p>&copy; 2017 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

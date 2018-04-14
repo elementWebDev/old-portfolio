@@ -1,0 +1,14 @@
+.rental li{
+  list-style-type: none;
+  display: inline-block; 
+}
+
+.crop {
+  height: 113px;
+  width: 150px;
+  overflow: hidden;
+}
+.crop img {
+  height: auto;
+  width: 150px;
+}

@@ -1,0 +1,90 @@
+/* CSS Document */
+.positioning h2 {
+  font-size: 18px;
+  font-weight: normal;
+  font-variant: normal;
+  color: #84C3D5;
+}
+.positioning sup {
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+  text-shadow: 0 0;
+}
+.z-index-container {
+  width: 60%;
+  height: 90px;
+  margin: 8px;
+  padding: 8px;
+  border: 3px solid #999;
+  float: left;
+  position: relative;
+}
+.ski {
+  width: 150px;
+  right: 15px;
+  bottom: 8px;
+  position: absolute;
+}
+.sled {
+  width: 150px;
+  right: 75px;
+  position: absolute;
+}
+.ski, .sled {
+  z-index: 1;
+}
+.ski-2 {
+  z-index: 2;
+}
+/*
+h1 {
+  color: #999;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  color: #99C8D5;
+  text-shadow: 1px 1px 1px #ccc;
+  margin: 0 auto;
+}
+h3 {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  text-shadow: 1px 1px 1px #ddd;
+  border-bottom: 1px solid #555;
+  margin: 10px 0;
+}
+h4 {
+  font-size: 22px;
+  font-variant: small-caps;
+  padding-bottom: 0;
+}
+h5 {
+  font-size: 16px;
+  font-variant: small-caps;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+a {
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+*/
+

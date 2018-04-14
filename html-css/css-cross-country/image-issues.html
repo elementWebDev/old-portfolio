@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Cross Country | CodeSchool Notes</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/image-issues.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> Code School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+
+<!-- links float when min-width 768px -->
+<aside>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="./index.html#fundamentals">Fundamentals</a>
+    <a href="./index.html#clearing-floats">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+</aside>
+<main>
+  <!-- Path HTML/CSS | Course 3 | Level 6 -->
+  <h2>Image Issues</h2>
+  <section>
+    <article>
+      <h3>Image Use</h3>
+      <figure>
+        <h4><strong>Layout</strong> or <strong>Content</strong></h4>
+        <p>When dealing with images, it's important to consider whether the image is part of the layout or part of the content.</p>
+        <p>Here we have a list of rental products, and we're displaying our image using a background image:</p>
+        <!-- example code for background image -->
+        <pre><code>
+  &lt;h4&gt;<span class="text">Rental Products</span>&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li class=<span class="value">"snowmobile"</span>&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+        </code></pre>
+        <pre><code>
+  <span class="text">.snowmobile li {</span>
+    <span class="property">background:</span> <span class="value">url(snowmobile.jpg)</span>;
+    <span class="property">height:</span> <span class="value">300px;</span>
+    <span class="property">width:</span> <span class="value">400px;</span>
+  <span class="text">}</span>
+        </code></pre>
+
+        <p>This was fine in the beginning because we had the image that we needed, but what happens if this list ever needs to become dynamic?</p>
+        <p>How would we dynamically access the background image of a list item?</p>
+        <p>A better way to do this is to write it as an inline image.</p>
+        <!-- inline image -->
+        <pre><code>
+  &lt;h4&gt;<span class="text">Rental Products</span>&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;img src=<span class="value">"snowmobile.jpg"</span> alt=<span class="value">"Snowmobile"</span> /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+        </code></pre>
+
+        <p>This way we can dynamically access the source and alt attributes.</p>
+        <p>You shouldn't always use inline images though. Let's look at an example of a case when you shouldn't.</p>
+        <!-- Example of inline image when you shouldn't -->
+        <pre><code>
+  &lt;h1&gt;<span class="text">Feel the rythm, feel the rhyme, get on up, it's bobsled time!</span>&lt;/h1&gt;
+  &lt;img src=<span class="value">"divider.jpg"</span> alt=<span class="value">"Divider"</span> /&gt;
+        </code></pre>
+
+        <p>Here we have an h1 tag that's immediately followed by a divider image.</p>
+        <p>This works fine, but it's not very <a href="grooming-code.html">DRY</a> because we'll probably have to repeat it alot, and it's hard to maintain.</p>
+        <p>A better way to define this image is in the background of our h1 tag.</p>
+
+        <pre><code>
+  &lt;h1&gt;<span class="text">Feel the rythm, feel the rhyme, get on up, it's bobsled time!</span>&lt;/h1&gt;
+        </code></pre>
+      <!-- Defining background image properly -->
+        <pre><code>
+  <span class="text">h1 {</span>
+    <span class="property">background:</span> <span class="value">url(divider.jpg);</span>
+    <span class="property">margin-bottom:</span> <span class="value">10px;</span>
+    <span class="property">padding-bottom:</span> <span class="value">10px;</span>
+        </code></pre>
+
+        <h4><strong>Review:</strong></h4>
+        <ul>
+          <li>Content should be marked up as inline images</li>
+          <li>Layout elements should be defined as background images</li>
+        </ul>
+      </figure>
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h3>Image Cropping</h3>
+      <figure>
+        <h4><strong>Common Issues</strong></h4>
+        <p>Now, let's talk about some common issues that can come up when images become dynamic.</p>
+        <pre><code>
+  &lt;h4&gt;<span class="text">Rental Products</span>&lt;/h4&gt;
+  &lt;ul class=<span class="value">"rental"</span>&gt;
+    &lt;li&gt;&lt;img src=<span class="value">"snowboard.jpg"</span> alt=<span class="value">"Snowboard"</span> /&gt;&lt;/li&gt;
+    ...
+        </code></pre>
+
+        <p>Let's look at our list items that are now dynamic.</p>
+        <ul class="crop crop1">
+          <li><img src="img/img-crop-1.png" alt="snowboard" /></li>
+          <li><img src="img/img-crop-2.png" alt="snowboard" /></li>
+          <li><img src="img/img-crop-3.png" alt="snowboard" /></li>
+        </ul>
+
+        <p>Consider what happens when images come in at different sizes.</p>
+
+        <pre><code>
+    <span class="text">.rental img {</span>
+      <span class="property">height:</span> <span class="value">300px;</span>
+      <span class="property">width:</span> <span class="value">400px;</span>
+    }
+        </code></pre>
+
+        <!-- Images are squished -->
+        <p>You've also probably seen something like this before.</p>
+        <ul class="crop crop2">
+          <li><img src="img/img-crop-1.png" alt="snowboard" /></li>
+          <li><img src="img/img-crop-2.png" alt="snowboard" /></li>
+          <li><img src="img/img-crop-3.png" alt="snowboard" /></li>
+        </ul>
+        <p>As you can see, setting a set height and width on everything is going to squish some of our images.</p>
+        <p>A better way to handle this is to use something called the overflow crop method.</p>
+
+        <h4><strong>Overflow Crop</strong> Method</h4>
+      <p>What we're going to do here is apply a <strong>crop class</strong> to the parent element surrounding our image, which in this case, is our list item.</p>
+        <!-- Overflow crop method -->
+        <pre><code>
+  &lt;h4&gt;<span class="text">Rental Products</span>&lt;/h4&gt;
+  &lt;ul class=<span class="value">"rental"</span>&gt;
+    &lt;li class=<span class="value">"crop"</span>&gt;
+      &lt;img src=<span class="value">"snowboard.jpg"</span> alt=<span class="value">"Snowboard"</span> /&gt;
+    &lt;/li&gt;
+        </code></pre>
+        
+        <p id="issue">We're going to set a set height and width on the <strong>.crop</strong> class, and then apply <strong>overflow:hidden</strong> to hide the part of the image that overflows our container.</p>
+        <pre><code>
+  <span class="text">.crop {</span>
+    <span class="property">height:</span> <span class="value">300px;</span>
+    <span class="property">width:</span> <span class="value">400px;</span>
+    <span class="property">overflow:</span> <span class="value">hidden;</span>
+  <span class="text">}</span>
+        </code></pre>
+
+        <p>So now we're going to see a window that is cropped at a certain size but the image inside of that container will be it's regular size, and it won't be squished.</p>
+        <ul class="crop">
+          <li class="crop3"><img src="img/img-crop-1.png" alt="snowboard" /></li>
+          <li class="crop3"><img src="img/img-crop-2.png" alt="snowboard" /></li>
+          <li class="crop3"><img src="img/img-crop-3.png" alt="snowboard" /></li>
+        </ul>
+        
+        <p>Doing it this way works fine, but it's still not totally perfect. Because as you can see, using only the overflow crop, crops out part of the full image.</p>
+        <p>There's a better way that we can do this that will scale the image down to better fit the container.</p>
+        
+        <p>What we need to do is set a width on our image and then allow the height to automatically scale. Resizing the image and using the overflow crop method together will provide us with a much better result.</p>
+                <pre><code>
+  <span class="text">.crop {</span>
+    <span class="property">height:</span> <span class="value">300px;</span>
+    <span class="property">width:</span> <span class="value">400px;</span>
+    <span class="property">overflow:</span> <span class="value">hidden;</span>
+  <span class="text">}</span>
+  <span class="text">.crop img {</span>
+    <span class="property">height:</span> <span class="value">auto;</span>
+    <span class="property">width:</span> <span class="value">400px;</span>
+  <span class="text">}</span>
+        </code></pre>
+        
+        <ul class="crop">
+          <li class="crop2 crop3"><img src="img/img-crop-1.png" alt="snowboard" /></li>
+          <li class="crop2 crop3"><img src="img/img-crop-2.png" alt="snowboard" /></li>
+          <li class="crop2 crop3"><img src="img/img-crop-3.png" alt="snowboard" /></li>
+        </ul>
+        
+        <ul class="crop">
+          <li class="crop4"><img src="img/img-crop-1.png" alt="snowboard" /></li>
+          <li class="crop4"><img src="img/img-crop-2.png" alt="snowboard" /></li>
+          <li class="crop4"><img src="img/img-crop-3.png" alt="snowboard" /></li>
+        </ul>
+        
+        <p>But wait, if we go back and refresh the browser, now we're seeing an image that's coming through that uses a portrait orientation.</p>
+        <p>We haven't accounted for any portrait oriented images in our CSS, so we can go back and do that now.</p>
+        <p>To account for portrait oriented images, we just need to switch the height and width settings. So we're going to set a set height on it and allow the width to automatically scale.</p>
+        
+        <pre><code>
+  <span class="text">.crop {</span>
+    <span class="property">height:</span> <span class="value">300px;</span>
+    <span class="property">width:</span> <span class="value">400px;</span>
+    <span class="property">overflow:</span> <span class="value">hidden;</span>
+  <span class="text">}</span>
+  <span class="text">.crop img {</span>
+    <span class="property">height:</span> <span class="value">300 px;</span>
+    <span class="property">width:</span> <span class="value">auto;</span>
+  <span class="text">}</span>
+        </code></pre>
+        
+        <p>Unfortunately, now that we've changed our CSS to account for portrait oriented images, we've broken our landscape oriented images.</p>
+        <p>The best way to handle both of these situations at the same time is to scale your images to become square. The square should be less than the height and width of all our images.</p>
+        
+        <p>There's really no perfect way to resize images with CSS, so your best bet is to try resizing them server-side.</p>
+        
+        <p>You can also provide image uploading instructions for your users inside of your CMS(Content Management System).</p>
+        
+        <h4><strong>Alternatives</strong> recap:</h4>
+        <ul>
+          <li>Resize images to a square &lt; height and width of all your images</li>
+          <li>Resize them server-side</li>
+          <li>Provide image-uploading instructions in your CMS </li>
+        </ul>
+        
+        <p>If you're dealing with fluid or responsive layouts, Richard Rutter has a good technique for dealing with those.</p>
+        <h5>Fluid &amp; Responsive</h5>
+        <p>Richard Rutter's technique: <a href="http://clagnut.com/sandbox/imagetest">http://clagnut.com/sandbox/imagetest</a></p>
+        
+      </figure>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <a href="index.html#fundamentals">Fundamentals</a>
+    <a href="clearing-floats.html">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+  <p>&copy; 2017 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

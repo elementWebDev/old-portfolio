@@ -1,0 +1,25 @@
+.crop li {
+  list-style-type: none;
+  display: inline-block;
+}
+.crop1 img {
+  max-width: 150px;
+}
+.crop2 img {
+  height: 113px;
+  width: 150px;
+}
+.crop3 {
+  height: 113px;
+  width: 150px;
+  overflow: hidden;
+}
+.crop4 {
+  height: 113px;
+  width: 150px;
+  overflow: hidden;
+}
+.crop4 img {
+  height: auto;
+  width: 150px;
+}

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Cross Country | School Notes</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css-cross-country/css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<header>
+  <nav>
+    <p class="tagline"><span>&lt;&gt;</span> School Notes</p>
+    <!-- Change these Links -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+      <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+      <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+    </ul>
+  </nav>
+</header>
+<h1>CSS Cross Country</h1>
+<aside>
+  <div class="secondary-links">
+    <p>Level Links</p>
+    <a href="./index.html#fundamentals">Fundamentals</a>
+    <a href="./index.html#clearing-floats">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+</aside>
+<main>
+  <!-- Path HTML/CSS -->
+
+  <!-- Course 3 | Level 1 | Section 1 -->
+  <article>
+    <!-- 3.1.1 -->
+    <h2 id="fundamentals">Frost-Proof Fundamentals</h2>
+    <section>
+      <h3>Placing CSS</h3>
+      <h4>Inline style attribute</h4>
+      <pre><code>
+  &lt;h1 <strong>style="color: #98c7d4;"</strong>&gt;CSS Cross Country&lt;/h1&gt;
+    </code></pre>
+      <h4>In the &lt;head&gt;</h4>
+      <pre><code>
+  &lt;head&gt;
+    &lt;style&gt;
+      <strong>h1 { color: #98c7d4; }</strong>
+    &lt;/style&gt;
+  &lt;/head&gt;
+    </code></pre>
+      <h4>External &lt;link&gt;</h4>
+      <pre><code>
+  &lt;head&gt;
+    &lt;title&gt;CSS Cross Country&lt;/title&gt;
+    <strong>&lt;link rel="stylesheet" href="styles.css" /&gt;</strong>
+  &lt;/head&gt;
+    </code></pre>
+    </section>
+
+    <!-- 3.1.2 -->
+    <section>
+      <h3>Selectors</h3>
+      <p><strong>Primary DOM selectors:</strong></p>
+      <ul>
+        <li>Element selector</li>
+        <li>Class selector</li>
+        <li>ID selector</li>
+      </ul>
+      <blockquote>
+        <h4><a href="http://go.codeschool.com/advanced-css-selectors">Advanced Selectors</a></h4>
+        <p>Learn more about advanced selectors like child &amp; sibling:</p>
+        <a href="http://go.codeschool.com/advanced-css-selectors">go.codeschool.com/advanced-css-selectors</a> </blockquote>
+      <h4><strong>Element</strong> selector</h4>
+      <figure>
+        <pre><code>
+  &lt;<strong>h1</strong> class="intro" id="header"&gt;Nice and Toasty&lt;/h1&gt;
+      </code></pre>
+        <pre><code>
+  <strong>h1</strong> {
+    color: #aba4ac;
+    margin-bottom: 10px;
+  }
+      </code></pre>
+        <figcaption><em>Element</em> selector: <strong>h1</strong></figcaption>
+      </figure>
+      <h4><strong>Class</strong> selector</h4>
+      <figure>
+        <pre><code>
+  &lt;h1 class="<strong>intro</strong>" id="header"&gt;Nice and Toasty&lt;/h1&gt;
+      </code></pre>
+        <pre><code>
+  <strong>.intro</strong> {
+    color: #aba4ac;
+    margin-bottom: 10px;
+  }
+      </code></pre>
+        <figcaption><em>Class</em> selector: <strong>.intro</strong></figcaption>
+      </figure>
+      <h4><strong>ID</strong> selector</h4>
+      <figure>
+        <pre><code>
+  &lt;h1 class="intro" id="<strong>header</strong>"&gt;Nice and Toasty&lt;/h1&gt;
+      </code></pre>
+        <pre><code>
+  <strong>#header</strong> {
+    color: #aba4ac;
+    margin-bottom: 10px;
+  }
+      </code></pre>
+        <figcaption><em>ID</em> selector: <strong>#header</strong></figcaption>
+      </figure>
+      <!-- LEFT OFF pg.8 CodeSchool-CSSCrossCountry.pdf -->
+      <h4><strong>Compound</strong> selectors</h4>
+      <figure>
+        <pre><code>
+  &lt;<strong>h1</strong> class="intro" id="<strong>header</strong>"&gt;Nice and Toasty&lt;/h1&gt;
+      </code></pre>
+        <pre><code>
+  <strong>h1#header</strong> {
+    color: #aba4ac;
+    margin-bottom: 10px;
+  }
+      </code></pre>
+        <figcaption><em>Compound</em> selector: <strong>h1#header</strong></figcaption>
+      </figure>
+    </section>
+    <!-- 3.1.3 -->
+    <section>
+      <h3>Cascade Order</h3>
+      <h4>Style <strong>Priority</strong></h4>
+      <figure>
+        <figcaption>Going <em>down</em> this list <em>increases</em> priority:</figcaption>
+        <ul>
+          <li>External <code>&lt;link&gt;</code></li>
+          <li>In the <code>&lt;head&gt;</code></li>
+          <li>Inline style attribute</li>
+          <li>Using <code>!important</code> (not recommended)</li>
+        </ul>
+      </figure>
+      <figure>
+        <p>Priority is also dependent on position in document:</p>
+        <pre><code>
+  .downhill {
+    color: #444525;
+  }
+  .downhill {
+    color: <strong>#ddaadd</strong>;
+  }
+      </code></pre>
+        <figcaption><em>the <strong>second color definition</strong> for .downhill <strong>overrides</strong> the first</em></figcaption>
+      </figure>
+      <figure>
+        <figcaption>Non-conflicting properties will be combined</figcaption>
+        <pre><code>
+    .intro {
+      color: #ddaadd;
+    }
+    .intro {
+      margin-bottom: 5px;
+      width: 700px;
+    }
+      </code></pre>
+        <pre><code>
+    .intro {
+      <strong>color: #ddaadd;
+      margin-bottom: 5px;
+      width: 700px;</strong>
+    }
+      </code></pre>
+      </figure>
+    </section>
+    <!-- 3.1.4 -->
+    <section>
+      <h3>Floating Left &amp; Right</h3>
+      <figure>
+        <pre><code>
+  &lt;article&gt;
+    &lt;img src="me3.png" alt="Me" /&gt;
+    &lt;p&gt;This is a simple pic of me showing I'm using my own code.
+    Practice! Practice! Practice!&lt;/p&gt;
+  &lt;/article&gt;
+      </code></pre>
+        <pre><code>
+    <strong>img {
+      float: left;
+    }</strong>
+      </code></pre>
+        <figure> <img src="img/me3.png" alt="Me">
+          <p>This is a simple pic of me showing I'm using my own code, and not
+            just copying and pasting. I'm internalizing these courses by showing
+            by example. I am also escaping the code in order to show it on the page.
+            I know alot of these sections, however I know that practice just reinforces
+            the knowledge I have attained. Here's how I've attained perfect scores:</p>
+          <p><strong>Practice! Practice! Practice!</strong></p>
+        </figure>
+      </figure>
+      <h4><strong>Removes elements from the document flow</strong> and moves them to a specified edge</h4>
+      <figure>
+        <figcaption>
+          <p>Other content within the parent element will wrap around floats</p>
+        </figcaption>
+        <pre><code>
+  float: left / right / none
+      </code></pre>
+        <div class="float-example-1">
+          <div class="blue-box blue-box-lg"></div>
+          <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        </div>
+      </figure>
+      <h4><strong>Stacking</strong> Order:</h4>
+      <figure>
+        <figcaption></figcaption>
+        <p>Floated elements stack up to the parent edge, <strong>then move down</strong> to the next available edge</p>
+        <div class="float-example-1 float-example-2">
+          <div class="blue-box"></div>
+          <div class="blue-box"></div>
+          <div class="blue-box">
+            <p>example box</p>
+          </div>
+        </div>
+        <div class="float-example-1 float-example-3">
+          <div class="blue-box"></div>
+          <div class="blue-box"></div>
+          <div class="blue-box">
+            <p>example box moved</p>
+          </div>
+        </div>
+      </figure>
+      <figure>
+        <p>Take care with elements that have <strong>differing heights</strong>- the first available edge is <strong>not always directly below</strong></p>
+        <div class="float-example-1 float-example-2">
+          <div class="blue-box blue-box-lg"></div>
+          <div class="blue-box"></div>
+          <div class="blue-box">
+            <p>example box</p>
+          </div>
+        </div>
+        <div class="float-example-1 float-example-3">
+          <div class="blue-box blue-box-lg"></div>
+          <div class="blue-box"></div>
+          <div class="blue-box">
+            <p>example box moved</p>
+          </div>
+        </div>
+        <figcaption>Notice the box has been moved but <strong>not completely to the left</strong> because the container is larger, and is moved to the <strong>next highest</strong> position available.</figcaption>
+      </figure>
+      <figure>
+        <figcaption>
+          <p>Ski! will be on the <strong>furthest right</strong> because it is declared first.</p>
+        </figcaption>
+        <pre><code>
+  &lt;article&gt;
+    &lt;img class=<strong>"ski"</strong> src=<strong>"ski.jpg"</strong> alt=<strong>"Ski!"</strong> /&gt;
+    &lt;img class=<strong>"sled"</strong> src=<strong>"sled.jpg"</strong> alt=<strong>"Sled!"</strong> /&gt;
+  &lt;/article&gt;
+      </code></pre>
+        <div class="group">
+          <pre class="pre-sm"><code>
+  <strong>.ski</strong> {
+    float: <strong>right</strong>;
+  }
+  <strong>.sled</strong> {
+    float: <strong>left</strong>;
+  }
+        </code></pre>
+          <div class="frost-container">
+            <div class="ski">
+              <p>Ski!</p>
+            </div>
+            <div class="sled">
+              <p>Sled!</p>
+            </div>
+          </div>
+        </div>
+        <div class="group">
+          <pre class="pre-sm"><code>
+  <strong>.ski</strong> {
+    float: <strong>right</strong>;
+  }
+  <strong>.sled</strong> {
+    float: <strong>right</strong>;
+  }
+        </code></pre>
+          <div class="frost-container">
+            <div class="ski">
+              <p>Ski!</p>
+            </div>
+            <div class="sled sled-2">
+              <p>Sled!</p>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </section>
+  </article>
+
+  <!-- Path HTML/CSS | Course 3 | Level 2 -->
+  <article>
+    <!-- 3.2.1 -->
+    <h2>Clear Carving</h2>
+    <section>
+      <h3 id="clearing-floats">Clearing Floats</h3>
+      <h4>Clearing is necessary if:</h4>
+      <figure>
+        <p>Floated items are taller than non-floated content</p>
+        <div class="group">
+          <div class="blue-box blue-box-lg"></div>
+          <div class="float-example-5">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+          <div class="float-example-5">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+        </div>
+      </figure>
+      <figure>
+        <p>All children are floating</p>
+        <div class="float-example-6">
+          <div class="blue-box"></div>
+          <div class="grey-box"></div>
+        </div>
+        <div class="clear"></div>
+      </figure>
+      <h4>Common float-clearing methods:</h4>
+      <figure>
+        <p>The options below are listed matter of <strong>importance</strong>. The <strong>bottom of the list being the most appropriate way of clearing a float</strong></p>
+        <ul>
+          <li>Clear with a subsequent element</li>
+          <li>Manual Clearing</li>
+          <li>The clearfix</li>
+        </ul>
+        <pre><code>
+  clear: left / right / both
+          </code></pre>
+      </figure>
+      <h5>Clear with a subsequent element</h5>
+      <figure>
+        <pre><code>
+  &lt;div&gt;
+    &lt;<strong>img</strong> src="ski.jpg" alt="Skiing!" /&gt;
+    &lt;p&gt;To successfully ski, simply do not fall.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="<strong>intro</strong>"&gt;   // <em>Clearing with Subsequent Element - see below</em>
+    &lt;p&gt;Whee!&lt;/&gt;
+  &lt;/div&gt;
+        </code></pre>
+        <pre class="pre-sm-non-float"><code>
+  <strong>img</strong> {
+    float: left;
+  }
+  <strong>.intro</strong> {
+    <strong>clear: both;</strong>
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>WARNING:</strong></p>
+          <ul>
+            <li>Requires sequence to stay intact - breaks if things move</li>
+            <li>Background / Border do not extend</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <h5>Manual Clearing</h5>
+      <figure>
+        <pre><code>
+  &lt;div&gt;
+    &lt;<strong>img</strong> src="ski.jpg" alt="Skiing!" /&gt;
+    &lt;p&gt;To successfully ski, simply do not fall.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="<strong>clear</strong>"&gt;&lt;/div&gt;   // <em>Manual Clearing - see below</em>
+  &lt;/div&gt;
+        </code></pre>
+        <pre class="pre-sm-non-float"><code>
+  <strong>.clear</strong> {
+    <strong>clear: both;</strong>
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>WARNING:</strong></p>
+          <ul>
+            <li>Requires an empty element</li>
+            <li>Might not be necessary later</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <h5>The clearfix</h5>
+      <figure class="group">
+        <pre class="pre-sm"><code>
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after {
+    clear: both;
+  }
+  .group {
+    zoom: 1; /* IE6&amp;7 */
+  }
+        </code></pre>
+        <p><strong>RECOMMENDED</strong></p>
+        <p>Originally developed by Tony Aslett</p>
+        <p>Refined version by Nicholas Gallagher</p>
+        <p><strong>When used on the parent, the children will be self-cleared</strong></p>
+      </figure>
+    </section>
+    <!-- 3.2.2 -->
+    <section>
+      <h3>Inheritance &amp; Specificity</h3>
+      <h4>Nested elements automatically inherit parent styles:</h4>
+      <figure class="group">
+        <pre><code>
+  &lt;article class="<strong>featured</strong>"&gt;
+    &lt;p&gt;Dang, it's cold up here!&lt;/p&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-sm"><code>
+  .featured {
+    color: <strong>#aba4ac</strong>;
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>The paragraph content above will inherit this color</strong></p>
+        </figcaption>
+      </figure>
+      <h4>Selectors can be nested to override parent properties:</h4>
+      <figure class="group">
+        <pre><code>
+  &lt;article class="<strong>featured</strong>"&gt;
+    &lt;p&gt;Dang, it's cold up here!&lt;/p&gt;
+  &lt;/article&gt;
+        </code></pre>
+        <pre class="pre-sm"><code>
+  .featured {
+    color: #0000ff;
+  }
+  .featured p {
+    color: <strong>#fff</strong>;
+  }
+        </code></pre>
+        <figcaption>
+          <p><strong>nesting the element selector overrides the color on .featured</strong></p>
+        </figcaption>
+      </figure>
+      <h4>Dealing with Specificity:</h4>
+      <figure>
+        <pre><code>
+  &lt;div id="content" class="featured"&gt;
+    &lt;p&gt;Break out the cocoa.&lt;/p&gt;
+  &lt;/div&gt;
+        </code></pre>
+        <pre><code>
+  #content {
+    color: #555;
+  }
+  .featured {
+    color: #ccc;
+  }
+        </code></pre>
+        <figcaption>
+          <p>Which color? See below.</p>
+        </figcaption>
+      </figure>
+      <h4>The priority of a selector (specificity):</h4>
+      <figure> <img src="img/specificity.png" alt="Specificity (calculating priority)" /> </figure>
+      <figure>
+        <div class="group">
+          <pre class="pre-md"><code>
+  p { color: #fff; }
+        </code></pre>
+          <p>0, 0, 0, 1</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  .intro { color: #98c7d4; }
+        </code></pre>
+          <p>0, 0, 1, 0</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  #header { color: #444245; }
+        </code></pre>
+          <p>0, 1, 0, 0</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  &lt;h1 style="color: #000;"&gt;Mogul&lt;/h1&gt;
+        </code></pre>
+          <p>1, 0, 0, 0</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  p { color: #fff !important; }
+        </code></pre>
+          <p><strong>WARNING!</strong></p>
+          <p>1, 0, 0, 0</p>
+        </div>
+      </figure>
+      <figure>
+        <div class="group">
+          <pre class="pre-md"><code>
+  .intro p.article { color: #fff; }
+          </code></pre>
+          <p>0, 0, 2, 1</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  .intro ul li.active { color: #98c7d4; }
+          </code></pre>
+          <p>0, 0, 2, 2</p>
+        </div>
+        <div class="group">
+          <pre class="pre-md"><code>
+  #header { color: #444245; }
+          </code></pre>
+          <p>0, 1, 0, 0</p>
+        </div>
+        <figcaption>
+          <p><strong>Using ID's sparingly will decrease complexity</strong></p>
+        </figcaption>
+      </figure>
+      <p>So, back to our example...</p>
+      <h4>Dealing with Specificity</h4>
+      <pre><code>
+  &lt;section id="content"&gt;
+    &lt;p class="featured"&gt;Free coffee with ski rental.&lt;/p&lt;
+    &lt;p&gt;Choose from 48 different ski colors.&lt;/p&gt;
+  &lt;/section&gt;
+      </code></pre>
+      <pre><code>
+  #content p {     <strong>0, 1, 0, 1</strong>
+    color: #000;
+  }
+  .featured {      <strong>0, 0, 1, 0</strong>
+    color: #777;
+  }
+      </code></pre>
+      <p><strong>Recommended</strong></p>
+      <pre><code>
+  #content p {           <strong>0, 1, 0, 1</strong>
+    color: #000;
+  }
+  #content .featured {   <strong>0, 1, 1, 0</strong>
+    color: #777;
+  }
+      </code></pre>
+    </section>
+  </article>
+
+</main>
+<footer>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../frontend-foundations/index.html">Frontend&nbsp;Foundations</a></li>
+    <li><a href="../frontend-formations/index.html">Frontend&nbsp;Formations</a></li>
+    <li><a href="index.html">CSS&nbsp;Cross&nbsp;Country</a></li>
+  </ul>
+  <div class="secondary-links">
+    <a href="index.html#fundamentals">Fundamentals</a>
+    <a href="clearing-floats.html">Clearing&nbsp;Floats</a>
+    <a href="box-bindings.html">Box&nbsp;Bindings</a>
+    <a href="grooming-code.html">Grooming&nbsp;Code</a>
+    <a href="css-safety.html">CSS&nbsp;Safety</a>
+    <a href="image-issues.html">Image&nbsp;Issues</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="pseudos.html">Pseudos</a>
+  </div>
+  <p>&copy; 2018 Ivan Huddleston</p>
+</footer>
+</body>
+</html>

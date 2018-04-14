@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/5.css" />
+<link rel="stylesheet" href="css/4.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 | Fonts &amp;amp; Interactions | Frontend Formations</title>
+</head>
+
+<body>
+<header>
+  <h1>CSS3 Styles</h1>
+  <nav>
+    <ul>
+      <li><a href="#font-face">Font Face</a></li>
+      <li><a href="#transforms">Transforms</a></li>
+      <li><a href="#transitions">Transitions</a></li>
+      <li><a href="#progressive-enhancement">Progressive&nbsp;Enhancement</a></li>
+    </ul>
+  </nav>
+</header>
+<h2>Level 5 - Fonts &amp; Interactions</h2>
+<main>
+  <section id="font-face"> 
+    <h3>Font Face</h3>
+    <blockquote>Using <strong>@font-face</strong>, we have the ability to provide online fonts for use on our websites.</blockquote>
+    <figure>
+      <figcaption>Example usage of <strong>@font-face</strong>:</figcaption>
+      <pre><code>
+  <strong>@font-face</strong> {
+    
+  }
+      </code></pre>
+    </figure>
+    <figure>
+      <figcaption>We specify the <strong>font-family</strong>, which is what we'll use to call the font:</figcaption>
+      <pre><code>
+  @font-face {
+    <strong>font-family:</strong> 'OpenSansRegular';
+  }      
+      </code></pre>
+    </figure>
+    <figure>
+      <figcaption>We add the location of the font files through the <strong>src</strong> property:</figcaption>
+      <pre><code>
+  @font-face {
+    font-family: 'OpenSansRegular';
+    <strong>src:</strong> url('OpenSansRegular-webfont.eot');
+      </code></pre>
+      <p>we'll have to specify multiple font types, which can be added as additional <strong>url()</strong>'s to the files.</p>
+    </figure>
+    <figure>
+      <figcaption>We specify the <strong>font-style</strong>:</figcaption>
+      <pre><code>
+  @font-face{
+    font-family: 'OpenSansSerif';
+    src: url('OpenSansSerif-webfont.eot');
+    <strong>font-style:</strong> normal;   
+  }
+      </code></pre>
+    </figure>
+    <figure>
+      <figcaption>We specify the <strong>font-weight</strong>:</figcaption>
+      <pre><code>
+  @font-face {
+    font-family: 'OpenSansSerif';
+    src: url('OpenSansSerif-webfont.eot');
+    font-style: normal; 
+    <strong>font-weight:</strong> normal;
+  }
+      </code></pre>
+    </figure>
+    <figure>
+      <figcaption>Using <strong>@font-face</strong> in our stylesheet:</figcaption>
+      <pre><code>
+  h1 {
+    font-family: 'OpenSansSerif';
+  }
+      </code></pre>
+      <p>we specify the <strong>font-family</strong> as the same one established in the <strong>@font-face</strong> call.</p>
+    </figure>
+    <blockquote>With <strong>@font-face</strong> fonts, just like any other font declaration, we'll want to add fallback fonts.</blockquote>
+    <figure>
+      <figcaption>Using <strong>@font-face</strong> in our stylesheet with fallbacks:</figcaption>
+      <pre><code>
+  h1 {
+    font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
+  }
+      </code></pre>
+      <p>Provide fallbacks here as you normally would.</p>
+    </figure>
+    <figure>
+      <figcaption>Using varying weights with <strong>@font-face</strong>:</figcaption>
+      <pre><code>
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('OpenSansBold-webfont.eot');
+    font-style: normal; 
+    <strong>font-weight:</strong> normal;
+      </code></pre>
+      <p>We're using a <strong>bold</strong> font family of '<strong>OpenSansBold</strong>'</p>
+    </figure>
+    <figure>
+      <figcaption>Using varying weights with <strong>@font-face</strong>:</figcaption>
+      <pre><code>
+  h1 {
+    font-family: 'OpenSansBold';
+  }
+      </code></pre>
+      <p>We use the bold version by changing the <strong>font-family</strong>.</p>
+    </figure>
+    <blockquote>We can alter the <strong>@font-face</strong> call in order to use the <em>font-weight</em> and <em>font-style</em> properties as usual.</blockquote>
+    <figure>
+      <figcaption>Using varying weights with <strong>@font-face:</strong>:</figcaption>
+      <pre><code>
+  @font-face {
+    font-family: 'OpenSansBold';
+    src: url('OpenSansBold-webfont.eot');
+    font-style-normal;
+    <strong>font-weight</strong>: bold;
+  }
+      </code></pre>
+      <ol>
+        <li>we can instead change the <strong>font-family</strong> to the same name as the regular weight version</li>
+        <li>we keep the <strong>src url()</strong> the same in order to include the <strong>bold</strong> font-weight</li>
+        <li>we can change the <strong>font-weight</strong> to <strong>bold</strong></li>
+      </ol>
+    </figure>
+  </section>
+  <section id="transforms">
+    <h3>Transforms</h3>
+    <blockquote>Using the <strong>transform</strong> property in CSS3, we can <em>translate, rotate, scale,</em> and <em>skew</em> elements in CSS.</blockquote>
+    <h4>Translate</h4>
+    <p>Not supported in any browsers!?</p>
+    <figure>
+      <figcaption>You can create a 2D translation using <strong>transform</strong>:</figcaption>
+      <pre><code>
+  .element{
+    transform: translate(20px, 30px);
+  }
+      </code></pre>
+      <p>Translate the <strong>.element 20px</strong> to the right (x-axis).</p>
+      <p>Translate the <strong>.element 30px</strong> down (y-axis).</p>
+    </figure>
+    <figure>
+      <figcaption>Example usage of a 2D translation  using transform:</figcaption>
+      <pre><code>
+  translate(&lt;tx&gt;, &lt;ty&gt;)
+      </code></pre>
+      <p>A <strong>&lt;transition-value&gt;</strong> for the <em>x-axis</em>, which can be either a <em>length</em> or <em>percentage</em>.</p>
+      <p>A <strong>&lt;transition-value&gt;</strong> for the <em>y-axis</em>, which can be either a <em>length</em> or <em>percentage</em>. If not specified, the value is <em>0</em>.</p>
+    </figure>
+    <figure>
+      <figcaption>Tou can use <strong>translateX</strong> and <strong>translateY</strong> to <strong>translate</strong> the <em>x</em> and <em>y</em> values individually:</figcaption>
+      <pre><code>
+  translateX(&lt;tx&gt;)
+      </code></pre>
+      <pre><code>
+  translateY(&lt;ty&gt;)
+      </code></pre>
+    </figure>
+    <h4>Rotate</h4>
+    <blockquote>With <strong>rotate</strong>, you can rotate an element clockwise around its <em>origin</em> by the specified <em>angle</em>.</blockquote>
+    <figure>
+      <figcaption>Example usage of <strong>rotate</strong>:</figcaption>
+      <pre><code>
+  .element {
+    transform: rotate(45deg);
+  }
+      </code></pre>
+      <p>The element is rotated <strong>45</strong> degrees.</p>
+      <div class="box-sm rotate"></div>
+    </figure>
+    <h4>Scale</h4>
+    <figure>
+      <figcaption>With <strong>scale</strong>, you can do a 2D scale by a specified unitless number.</figcaption>
+      <pre><code>
+  .element {
+    transform: scale(1.2);
+  }
+      </code></pre>
+      <p>The element is scaled to the unitless number <strong>1.2</strong></p>
+      <div class="box-sm scale"></div>
+    </figure>
+    <figure>
+      <figcaption>Example usage of <strong>scale</strong>:</figcaption>
+      <pre><code>
+  scale(&lt;sx&gt;, &lt;sy&gt;)
+      </code></pre>
+      <ul>
+        <li>&lt;sx&gt; - A unitless number for the <strong>x-axis</strong></li>
+        <li>&lt;sy&gt; - A unitless number for the <strong>y-axis</strong>. If not specified, it defaults to the value of the <strong>&lt;sx&gt;</strong>.</li>
+      </ul>
+    </figure>
+    <figure>
+      <figcaption>You can use <strong>scaleX</strong> and <strong>scaleY</strong> to translate the <em>x</em> and <em>y</em> values individually:</figcaption>
+      <pre><code>
+  .element {
+    transform: scaleX(1.2);
+  }
+      </code></pre>
+      <pre><code>
+  .element {
+    transform: scaleY(0.3);
+  }
+      </code></pre>
+      <div class="box-sm scalex scaley"></div>
+    </figure>
+    <h4>Skew</h4>
+    <blockquote>With <strong>skew</strong>, an element is skewed around the <em>x</em> or <em>y</em> axis by the <em>angle</em> specified.</blockquote>
+    <figure>
+      <figcaption>Example usage of <strong>skewX</strong>:</figcaption>
+      <pre><code>
+  .element {
+    transform: skewX(-25deg);
+  }
+      </code></pre>
+      <p>the element is skewed <strong>-25</strong> degrees along the x-axis.</p>
+      <pre><code>
+  skewX(&lt;ax&gt;)
+      </code></pre>
+      <p>An &lt;angle&gt; for the <em>x-axis</em>.</p>
+    </figure>
+    <figure>
+      <figcaption>Example usage of <strong>skewY</strong>:</figcaption>
+      <pre><code>
+  .element {
+    transform: skewY(-25deg);
+  }
+      </code></pre>
+      <p>the element is skewed <strong>-25</strong> degrees along the y-axis.</p>
+      <pre><code>
+  skewX(&lt;ay&gt;)
+      </code></pre>
+      <p>An &lt;angle&gt; for the <em>y-axis</em>.</p>
+    </figure>
+    <figure>
+      <figcaption>Example usage of <strong>skewX</strong> and <strong>skewY</strong>:</figcaption>
+      <pre><code>
+  .element{
+    transform: skewX(25deg);
+  }  
+      </code></pre>
+      <pre><code>
+  .element{
+    transform: skewY(-85deg);
+  }  
+      </code></pre>
+      <div class="box-sm skewx"></div>
+      <div class="box-sm skewy"></div>
+    </figure>   
+  </section>
+  <section id="transitions">
+    <h3>Transitions</h3>
+    <blockquote>CSS3 provides <strong>transitions</strong>, which allow you to <em>transition between two states of a specified element</em>.</blockquote>
+    <figure>
+      <figcaption>Example usage of <strong>transition</strong>:</figcaption>
+      <pre><code>
+  .element {
+    background-color: black;
+    transition: background-color 0.2s ease-in-out;
+  }
+      </code></pre>
+      <pre><code>
+  .element:hover {
+    background-color: blue;
+  }
+      </code></pre>
+      <p>The <strong>background-color</strong> transitions from <strong>black</strong> to <strong>blue</strong> over the period of 0.2 seconds</p>
+      <div class="box transition-1"></div>
+    </figure>
+    <figure>
+      <figcaption>Example usage of the shorthand <strong>transition</strong> property:</figcaption>
+      <pre><code>
+  transition: &lt;property&gt; &lt;duration&gt; &lt;timing-duration&gt; &lt;delay&gt;
+      </code></pre>
+      <p><strong>&lt;property&gt;</strong>: The css property you want to <strong>transition</strong>.</p>
+      <p><strong>&lt;duration&gt;</strong>: The <strong>duration</strong> of the <strong>transition</strong>. The default value is <em>0s</em>, or 0 seconds.</p>
+      <p><strong>&lt;timing-function&gt;</strong>: The timing of the <strong>transition</strong> itself.</p>
+      <h4>timing-functions</h4>
+      <ul>
+        <li>ease</li>
+        <li>ease-in</li>
+        <li>ease-in-out</li>
+        <li>linear</li>
+        <li>cubic-bezier</li>
+        <li>step-start</li>
+        <li>step-end</li>
+        <li>steps()</li>
+      </ul>
+      <p><strong>&lt;delay&gt;</strong>: The amount of time to wait between the change that is requested on a specific property, and at the start of the <strong>transition</strong>.</p>
+    </figure>
+    <figure>
+      <figcaption>You can set the <strong>transition</strong> values individually, as well:</figcaption>
+      <pre><code>
+  .element {
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+  }
+      </code></pre>
+      <div class="box transition-long"></div>
+    </figure>
+    <blockquote>Using <strong>all</strong> as the <strong>transition-property</strong>, we can <em>transition</em> multiple properties at once.</blockquote>
+    <figure>
+      <figcaption>Example usage of <strong>transition</strong> using the <em>all</em> property:</figcaption>
+      <pre><code>
+  .element {
+    background-color: black;
+    color: white;
+    transition: <strong>all 0.2s ease-in-out</strong>;
+  }
+      </code></pre>
+      <pre><code>
+  .element:hover {
+    background-color: grey;
+    color: black;
+  }
+       </code></pre>
+       <p>The <strong>all</strong> property will transition both the <strong>background-color</strong> AND the <strong>color</strong> properties.</p>
+       <div class="box transition-all"><h2>Hello</h2></div>
+    </figure>
+  </section>
+  <section id="progressive-enhancement">
+    <h3>Progressive Enhancement</h3>
+    <blockquote>The term &ldquo;<strong>progressive enhancement</strong>&rdquo; refers to the use of newer that <em>add to</em> the experience in modern browsers that support those features, but doesn't <em>detract from</em> the experience in older browsers.</blockquote>
+    <figure>
+      <figcaption>Example of <strong>progressive enhancement</strong>:</figcaption>
+      <pre><code>
+  .element {
+    background: #ccc;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+  }
+      </code></pre>
+      <div class="box progressive"></div>
+      <p>If the <strong>border-radius</strong> and <strong>box-shadow</strong> properties aren't supported, we still get a usable design.</p>
+      <div class="box"></div>
+    </figure>
+  </section>
+</main>
+</body>
+</html>
