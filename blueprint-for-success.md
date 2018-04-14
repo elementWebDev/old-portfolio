@@ -48,9 +48,6 @@ Trinh
 ### If you engage them more than likely they will be interested in talking about what they do... 
 (DO I?) LOL... ABSOLUTELY
 
-
-
-=============
 - contact people in the industry and ask questions
 
 - My work history is not conventional
